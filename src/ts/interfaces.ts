@@ -1,13 +1,4 @@
-// import { RouteGenericInterface } from "fastify/types/route";
-
 import { RequestGenericInterface } from "fastify";
-
-
-// export interface IParamstring extends RouteGenericInterface {
-//     Params:{
-//         userId?:string
-//     }
-//   }
 
 export interface UserInterface{
     name:string;

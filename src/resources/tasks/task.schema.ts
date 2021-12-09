@@ -1,4 +1,4 @@
-const taskSchema = {
+const taskResponseBody = {
   id: { type: 'string' },
   title: { type: 'string' },
   order: { type: 'number' },
@@ -72,13 +72,13 @@ const putTaskOpts = {
     response: {
       200: {
         type: 'object',
-        properties: taskSchema,
+        properties: taskResponseBody,
       },
     },
   },
 };
 
-module.exports = {
+export const taskSchema = {
   getTaskOpts,
   postTasksOpts,
   getTaskByIdOpts,
