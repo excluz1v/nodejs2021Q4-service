@@ -1,7 +1,7 @@
 export type userType= {
     name:string,
     login:string,
-    password:string,
+    id:string,
 }
 export type taskType= {
     id? :string,

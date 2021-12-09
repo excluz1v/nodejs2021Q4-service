@@ -45,7 +45,7 @@ const deleteUserById =  (id:string) => {
   return true;
 };
 
-export = {
+export const usersRepo= {
   getAll,
   postUser,
   getUserById,
