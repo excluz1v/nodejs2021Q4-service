@@ -1,4 +1,4 @@
-const columnsSchema = require('../column/column.schema');
+import {columnSchema} from '../column/column.schema';
 
 // Options for GET ALL BOARDS
 const getBoardsOpts = {
@@ -11,7 +11,7 @@ const getBoardsOpts = {
           properties: {
             id: { type: 'string' },
             title: { type: 'string' },
-            columns: columnsSchema.columnsWithId,
+            columns: columnSchema.columnsWithId,
           },
         },
       },
@@ -27,7 +27,7 @@ const postBoardsOpts = {
       required: ['title', 'columns'],
       properties: {
         title: { type: 'string' },
-        columns: columnsSchema.columnsWithOutId,
+        columns: columnSchema.columnsWithOutId,
       },
     },
     response: {
@@ -36,7 +36,7 @@ const postBoardsOpts = {
         properties: {
           id: { type: 'string' },
           title: { type: 'string' },
-          columns: columnsSchema.columnsWithId,
+          columns: columnSchema.columnsWithId,
         },
       },
     },
@@ -52,7 +52,7 @@ const getBoardByIdOpts = {
         properties: {
           id: { type: 'string' },
           title: { type: 'string' },
-          columns: columnsSchema.columnsWithId,
+          columns: columnSchema.columnsWithId,
         },
       },
     },
@@ -67,7 +67,7 @@ const putBoardOpts = {
       required: ['title', 'columns'],
       properties: {
         title: { type: 'string' },
-        columns: columnsSchema.columnsWithId,
+        columns: columnSchema.columnsWithId,
       },
     },
     response: {
@@ -76,14 +76,14 @@ const putBoardOpts = {
         properties: {
           id: { type: 'string' },
           title: { type: 'string' },
-          columns: columnsSchema.columnsWithId,
+          columns: columnSchema.columnsWithId,
         },
       },
     },
   },
 };
 
-module.exports = {
+export const boardSchema= {
   getBoardsOpts,
   postBoardsOpts,
   getBoardByIdOpts,

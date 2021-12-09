@@ -22,4 +22,4 @@ const columnsWithOutId = {
     },
   },
 };
-module.exports = { columnsWithId, columnsWithOutId };
+export const columnSchema = { columnsWithId, columnsWithOutId };
