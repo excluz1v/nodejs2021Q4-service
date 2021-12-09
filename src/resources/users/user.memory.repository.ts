@@ -1,7 +1,6 @@
 import { userType } from "src/ts/types";
 import { User } from "./user.model";
-
-import taskRepo = require('../tasks/tasks.memory.repository');
+import {tasksRepo} from '../tasks/tasks.memory.repository';
 
 let users:[]|User[] = [];
 
@@ -41,7 +40,7 @@ const deleteUserById =  (id:string) => {
   const isExist =  getUserById(id);
   if (isExist === undefined) return false;
   users =  users.filter((user:User) => user.id !== id);
-  taskRepo.deleteAssignedUsers(id);
+  tasksRepo.deleteAssignedUsers(id);
   return true;
 };
 
