@@ -3,12 +3,15 @@ import { taskType } from "./types";
 
 export interface UserInterface{
     name:string;
-
     login:string;
-  
     password:string;
-  
     id:string;
+}
+
+export interface ColumnInterface {
+    id :string;
+    title :string;
+    order :number;
 }
 
 export interface TaskInterface{
