@@ -22,7 +22,7 @@ const postTasks = (boardId:string, taskData:taskType) => {
   return newTask;
 };
 
-const updateTask = (boardId:string, taskId:string, newTaskInfo:taskType) => {
+const updateTask = (taskId:string, newTaskInfo:taskType) => {
   let taskIndex:number;
   tasks = tasks.map((task:Task, index) => {
     if (task.id === taskId) {
@@ -55,7 +55,7 @@ const deleteTaskByBoardId =  (boardId:string) => {
   tasks = tasks.filter((task:Task) => task.boardId !== boardId);
 };
 
-export = {
+export const tasksRepo = {
   getAllTasksByBoardId,
   getTaskByBoardIdAndId,
   postTasks,
