@@ -32,11 +32,11 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:import/recommended',
-    // 'plugin:import/typescript',
+    'plugin:import/typescript',
     'airbnb-base',
     'prettier',
-    // 'plugin:@typescript-eslint/recommended',
-    // 'plugin:@typescript-eslint/recommended-requiring-type-checking',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/recommended-requiring-type-checking',
   ],
   rules: {
     'import/no-unresolved': [2, { commonjs: true, amd: true }],
