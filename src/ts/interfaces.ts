@@ -1,4 +1,5 @@
 import { RequestGenericInterface } from "fastify";
+import { taskType } from "./types";
 
 export interface UserInterface{
     name:string;
@@ -29,4 +30,12 @@ export interface requestUserParams extends RequestGenericInterface{
         login: string,
         password: string
     }
+}
+
+export interface requestTaskParams extends RequestGenericInterface{
+    Params?:{
+        boardId?:string,
+        taskId?:string
+    },
+    Body?:taskType
 }
