@@ -1,4 +1,6 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.usersRepo = void 0;
 const user_model_1 = require("./user.model");
 const taskRepo = require("../tasks/tasks.memory.repository");
 let users = [];
@@ -38,7 +40,7 @@ const deleteUserById = (id) => {
     taskRepo.deleteAssignedUsers(id);
     return true;
 };
-module.exports = {
+exports.usersRepo = {
     getAll,
     postUser,
     getUserById,

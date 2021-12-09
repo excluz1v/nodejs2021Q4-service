@@ -83,7 +83,7 @@ const putUserOpts = {
   },
 };
 
-module.exports = {
+export const userSchema = {
   getUserOpts,
   postUserOpts,
   getUserByIdOpts,

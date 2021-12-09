@@ -3,7 +3,11 @@ import { usersRepo } from "./user.memory.repository";
 import { User } from "./user.model";
 
 
-const getAll =  () => usersRepo.getAll();
+const getAll =  () =>{
+const users= usersRepo.getAll()
+const result=users.map(el=> User.toResponse(el))
+return result
+};
 
 const postUser =  (userCredentials:userType) => {
   const newUser =  usersRepo.postUser(userCredentials);
