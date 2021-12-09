@@ -1,7 +1,7 @@
 const taskService = require('./task.service');
 const schemas = require('./task.schema');
 
-async function taskRoutes(fastify, options, done) {
+export async function taskRoutes(fastify, options, done) {
   fastify.get('/boards/:boardId/tasks', schemas.getTaskOpts, (req, res) => {
     const { boardId } = req.params;
     const tasks = taskService.getAll(boardId);

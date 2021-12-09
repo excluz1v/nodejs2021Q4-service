@@ -12,7 +12,7 @@ function addAuthValidation(schema, preValidation) {
   return schema;
 }
 
-async function userRoutes(fastify, options, done) {
+export async function userRoutes(fastify, options, done) {
   const getUserOpts = addAuthValidation(schemas.getUserOpts, [fastify.auth]);
   const getUserByIdOpts = addAuthValidation(schemas.getUserByIdOpts, [
     fastify.auth,
@@ -56,5 +56,3 @@ async function userRoutes(fastify, options, done) {
 
   done();
 }
-
-module.exports = userRoutes;

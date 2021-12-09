@@ -1,1 +1,17 @@
-{}
+{
+    "compilerOptions": {
+      "target":"ESNEXT",
+      "module":"CommonJS",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "outDir": "dist",
+    "sourceMap": true,
+    "moduleResolution":"Node",
+    "rootDir":"./src",
+    "baseUrl":".",
+    "esModuleInterop": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
+}

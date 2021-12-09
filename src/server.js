@@ -1,14 +1,20 @@
-const fastify = require('fastify')();
-const swagger = require('fastify-swagger');
-const path = require('path');
-const userRoutes = require('./resources/users/user.router');
-const fastifyPlugin = require('./resources/login/auth');
-const { AuthRouter } = require('./resources/login/auth.route');
-const { PORT, AUTH_MODE } = require('./common/config');
-const boardRoutes = require('./resources/boards/boards.router');
-const taskRoutes = require('./resources/tasks/task.router');
+import fastify = require('fastify');
+import swagger = require('fastify-swagger');
+import path = require('path');
 
-fastify.register(swagger, {
+import userRoutes = require('./resources/users/user.router');
+
+// const fastifyPlugin = require('./resources/login/auth');
+// const { AuthRouter } = require('./resources/login/auth.route');
+import {config}  from './common/config';
+
+import boardRoutes = require('./resources/boards/boards.router');
+
+import taskRoutes = require('./resources/tasks/task.router');
+
+const server=fastify()
+
+server.register(swagger, {
   mode: 'static',
   routePrefix: '/doc',
   specification: {
@@ -20,20 +26,20 @@ fastify.register(swagger, {
   exposeRoute: true,
 });
 
-if (AUTH_MODE) {
-  fastify.register(fastifyPlugin);
-  fastify.register(AuthRouter);
-}
+// if (AUTH_MODE) {
+//   server.register(fastifyPlugin);
+//   server.register(AuthRouter);
+// }
 
-fastify.register(userRoutes);
-fastify.register(boardRoutes);
-fastify.register(taskRoutes);
+server.register(userRoutes);
+server.register(boardRoutes);
+server.register(taskRoutes);
 
 const start = async () => {
   try {
-    await fastify.listen(PORT);
+    await server.listen(config.PORT);
   } catch (err) {
-    fastify.log.error(err);
+    server.log.error(err);
     process.exit(1);
   }
 };
