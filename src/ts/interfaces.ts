@@ -14,6 +14,12 @@ export interface ColumnInterface {
     order :number;
 }
 
+export interface BoardInterface{
+    id:string;
+    title:string;
+   columns:ColumnInterface[]|[]
+}
+
 export interface TaskInterface{
     id :string,
     title:string,
