@@ -4,17 +4,18 @@ import {Task} from './task.model';
 let tasks:[]|Task[] = [];
 
 /**
- * 
+ * receive all tasks by board id
  * @param boardId board id string
  * @returns tasks if tasks exist in database or empty array
  */
+
 const getAllTasksByBoardId = (boardId:string):[]|Task[] => {
   const res = tasks.filter((task:Task) => task.boardId === boardId);
   return res;
 };
 
 /**
- * 
+ * receive single task by board id and task id
  * @param boardId board id string
  * @param taskId task id string
  * @returns single task if task exist in database
@@ -29,11 +30,12 @@ const getTaskByBoardIdAndId = (boardId:string, taskId:string) => {
 };
 
 /**
- * 
+ * create new task in existing board
  * @param boardId  board id string
  * @param taskData task data object 
  * @returns fresh created task
  */
+
 const postTasks = (boardId:string, taskData:taskType) => {
   const newTask = new Task({ ...taskData, boardId });
   tasks = [...tasks, newTask];
@@ -41,11 +43,12 @@ const postTasks = (boardId:string, taskData:taskType) => {
 };
 
 /**
- * 
+ * update task data in existing board
  * @param taskId task id string
  * @param newTaskInfo new task data
  * @returns updated task data
  */
+
 const updateTask = (boardId:string,taskId:string, newTaskInfo:taskType) => {
   let taskIndex=0;
   tasks = tasks.map((task:Task, index) => {
@@ -59,7 +62,7 @@ const updateTask = (boardId:string,taskId:string, newTaskInfo:taskType) => {
 };
 
 /**
- * 
+ * delete task from database by board id and task id
  * @param boardId board id string
  * @param taskId task id string
  * @returns filtered array of tasks or empty array
@@ -72,7 +75,7 @@ const deleteTaskById = (boardId:string, taskId:string) => {
 };
 
 /**
- * 
+ * delete users that were assigned to certain task 
  * @param userId user id string
  * @returns void
  */
@@ -87,8 +90,9 @@ const deleteAssignedUsers = (userId:string) => {
     return task;
   });
 };
+
 /**
- * 
+ * delete all task by board id
  * @param boardId board id string
  *  @returns void
  */

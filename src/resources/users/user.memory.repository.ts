@@ -5,13 +5,13 @@ import {tasksRepo} from '../tasks/tasks.memory.repository';
 let users:[]|User[] = [];
 
 /**
- * 
+ * receive all users from database
  * @returns array of users instances or empty array
  */
 const getAll =  () => users;
 
 /**
- * 
+ * create new user
  * @param user new user data Object
  * @returns created User instance with public properties
  */
@@ -21,7 +21,7 @@ const postUser =  (user:userType) => {
   return newUser;
 };
 /**
- * 
+ * receive single user by id
  * @param id user id string
  * @returns boolean if user exist or not
  */
@@ -30,7 +30,7 @@ const getUserById =  (id:string) => {
   return result;
 };
 /**
- * 
+ * receive single user by login
  * @param login user login string
  * @returns boolean if user exist or not
  */
@@ -40,7 +40,7 @@ const getUserByLogin =  (login:string) => {
 };
 
 /**
- * 
+ * update certain user in database
  * @param id user id string
  * @param userCredentials new user data object
  * @returns updated user info object
@@ -60,7 +60,7 @@ const updateUserById =  (id:string, userCredentials:userType):User|false => {
 };
 
 /**
- * 
+ * delete user from database by id
  * @param id user id string
  * @returns boolean if user deleted from database
  */

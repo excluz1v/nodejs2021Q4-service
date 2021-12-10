@@ -18,9 +18,9 @@ export class User implements UserInterface{
   }
 
 /**
- * 
+ * hide private information
  * @param user User instance
- * @returns object with publick properties
+ * @returns object with public properties
  */
   static toResponse(user:UserInterface) {
     const { id, name, login } = user;

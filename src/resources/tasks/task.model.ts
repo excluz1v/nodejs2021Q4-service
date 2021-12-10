@@ -36,7 +36,7 @@ export class Task implements TaskInterface{
 
 
 /**
- * 
+ * hide secret information
  * @param task Task class
  * @returns object with id, title, order, description, userId
  */
