@@ -16,6 +16,11 @@ export class Board implements BoardInterface {
 
   columns: ColumnInterface[];
 
+/**
+ * 
+ * @param ArrOfColumns array of columns
+ * @returns created array with Column instances
+ */
   static createColumn(ArrOfColumns:ColumnInterface[]|[]) {
     return [...ArrOfColumns].map((col) => new Column(col));
   }

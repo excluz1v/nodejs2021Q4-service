@@ -5,18 +5,39 @@ import { Board } from "./board.model";
 
 let boards:[]|Board[] = [];
 
+/**
+ * 
+ * @returns all boards in database
+ */
+
 const getAll = () => boards;
 
+/**
+ * 
+ * @param boardData new board data object
+ * @returns created board Instance with id
+ */
 const postBoards = (boardData:BoardInterface) => {
   const newBoard = new Board(boardData);
   boards = [...boards, newBoard];
   return newBoard;
 };
 
+/**
+ * 
+ * @param id board id string
+ * @returns if board exist return it or undefined
+ */
 const getBoardById = (id:string) => {
   const result = boards.find((board:Board) => board.id === id);
   return result;
 };
+/**
+ * 
+ * @param id board id string
+ * @param newBoardInfo board data object
+ * @returns  IF board exist =>updated bord data object ELSE false
+ */
 
 const updateBoardById = (id:string, newBoardInfo:BoardInterface) => {
   const result = boards.find((board:Board) => board.id === id);
@@ -33,6 +54,11 @@ const updateBoardById = (id:string, newBoardInfo:BoardInterface) => {
   return boards[boardIndex];
 };
 
+/**
+ * 
+ * @param id board id string
+ * @returns boolean if board is deleted
+ */
 const deleteBoardById = (id:string) => {
   const isExist = getBoardById(id);
   if (isExist === undefined) return false;
