@@ -13,4 +13,15 @@ export type taskType= {
     columnId:string|null,
 }
 
+// export type ColumnType= {
+//     id?:string,
+//     title:string,
+//     order:number
+// }
+
+// export type BoardType= {
+//     id? :string,
+//     title:string,
+//     columns:ColumnType[]
+// }
 export type nullUserType={userId:null}
