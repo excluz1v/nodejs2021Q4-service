@@ -28,13 +28,13 @@ export class Task implements TaskInterface{
 
   description: string;
 
-  userId: string;
+  userId: string|null;
 
-  boardId: string;
+  boardId: string|null;
 
-  columnId: string;
+  columnId: string|null;
 
-  static toResponse(task:Task) {
+  static toResponse(task:TaskInterface) {
     const { id, title, order, description, userId } = task;
     return { id, title, order, description, userId };
   }

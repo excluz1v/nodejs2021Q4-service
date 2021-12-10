@@ -19,7 +19,7 @@ const postTasks = (boardId, taskData) => {
     return newTask;
 };
 const updateTask = (taskId, newTaskInfo) => {
-    let taskIndex;
+    let taskIndex = 0;
     tasks = tasks.map((task, index) => {
         if (task.id === taskId) {
             taskIndex = index;

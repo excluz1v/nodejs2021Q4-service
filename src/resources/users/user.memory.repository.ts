@@ -24,8 +24,7 @@ const getUserByLogin =  (login:string) => {
 const updateUserById =  (id:string, userCredentials:userType):User|false => {
   const result =  users.find((user:User) => user.id === id);
   if (result === undefined) return false;
-
-  let userIndex:number;
+  let userIndex=0;
   users = users.map((user, index) => {
     if (user.id === id) {
       userIndex = index;

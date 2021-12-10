@@ -18,7 +18,7 @@ const updateBoardById = (id, newBoardInfo) => {
     const result = boards.find((board) => board.id === id);
     if (result === undefined)
         return false;
-    let boardIndex;
+    let boardIndex = 0;
     boards = boards.map((board, index) => {
         if (board.id === id) {
             boardIndex = index;

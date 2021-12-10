@@ -22,7 +22,7 @@ const updateBoardById = (id:string, newBoardInfo:BoardInterface) => {
   const result = boards.find((board:Board) => board.id === id);
   if (result === undefined) return false;
 
-  let boardIndex:number;
+  let boardIndex=0;
   boards = boards.map((board, index) => {
     if (board.id === id) {
       boardIndex = index;

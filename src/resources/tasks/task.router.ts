@@ -1,18 +1,18 @@
 import { FastifyInstance, FastifyPluginOptions } from "fastify";
-import { requestTaskParams } from "src/ts/interfaces";
+import { GetSingleTaskReqParams, GetTasksReqParams, PostTaskReqParams } from "src/ts/interfaces";
 import  {taskService} from './task.service';
 import  {taskSchema} from './task.schema';
 
 
 export  function taskRoutes(fastify:FastifyInstance, options:FastifyPluginOptions, done:()=>void) {
 
-  fastify.get<requestTaskParams>('/boards/:boardId/tasks', taskSchema.getTaskOpts, async (req, res) => {
+  fastify.get<GetTasksReqParams>('/boards/:boardId/tasks', taskSchema.getTaskOpts, async (req, res) => {
     const { boardId } = req.params;
     const tasks = taskService.getAll(boardId);
     await res.send(tasks);
   });
 
-  fastify.get<requestTaskParams>(
+  fastify.get<GetSingleTaskReqParams>(
     '/boards/:boardId/tasks/:taskId',
     taskSchema.getTaskByIdOpts,
     async (req, res) => {
@@ -23,14 +23,14 @@ export  function taskRoutes(fastify:FastifyInstance, options:FastifyPluginOption
     }
   );
 
-  fastify.post<requestTaskParams>('/boards/:boardId/tasks', taskSchema.postTasksOpts, async(req, res) => {
+  fastify.post<PostTaskReqParams>('/boards/:boardId/tasks', taskSchema.postTasksOpts, async(req, res) => {
     const { body } = req;
     const { boardId } = req.params;
     const taskInfo = taskService.postTask(boardId, body);
    await res.status(201).send(taskInfo);
   });
 
-  fastify.put<requestTaskParams>(
+  fastify.put<PostTaskReqParams>(
     '/boards/:boardId/tasks/:taskId',
     taskSchema.putTaskOpts,
    async (req, res) => {
@@ -41,7 +41,7 @@ export  function taskRoutes(fastify:FastifyInstance, options:FastifyPluginOption
     }
   );
 
-  fastify.delete<requestTaskParams>('/boards/:boardId/tasks/:taskId', async (req, res) => {
+  fastify.delete<GetSingleTaskReqParams>('/boards/:boardId/tasks/:taskId', async (req, res) => {
     const { boardId, taskId } = req.params;
     const result =  taskService.deleteTaskById(boardId, taskId);
     if (!result)await res.status(404).send('Task not found');

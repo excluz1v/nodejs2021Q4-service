@@ -1,5 +1,5 @@
 import { FastifyInstance, FastifyPluginOptions } from 'fastify';
-import { requestBoardsParams } from 'src/ts/interfaces';
+import { GetBoardReqParams, PostBoardReqParams, PutBoardReqParams } from 'src/ts/interfaces';
 import {boardsService} from './board.service';
 import {boardSchema} from './boards.schema';
 
@@ -10,21 +10,21 @@ export function boardRoutes(fastify:FastifyInstance, options:FastifyPluginOption
    await res.send(boards);
   });
 
-  fastify.get<requestBoardsParams>('/boards/:boardId', boardSchema.getBoardByIdOpts,async (req, res) => {
+  fastify.get<GetBoardReqParams>('/boards/:boardId', boardSchema.getBoardByIdOpts,async (req, res) => {
     const { boardId } = req.params;
     const result = boardsService.getBoardById(boardId);
     if (result === false)await res.status(404).send('Board not found');
    await res.send(result);
   });
 
-  fastify.post<requestBoardsParams>('/boards', boardSchema.postBoardsOpts,async (req, res) => {
+  fastify.post<PostBoardReqParams>('/boards', boardSchema.postBoardsOpts,async (req, res) => {
     const { body } = req;
 
     const boardInfo = boardsService.postBoard(body);
    await res.status(201).send(boardInfo);
   });
 
-  fastify.put<requestBoardsParams>('/boards/:boardId', boardSchema.putBoardOpts,async (req, res) => {
+  fastify.put<PutBoardReqParams>('/boards/:boardId', boardSchema.putBoardOpts,async (req, res) => {
     const { body } = req;
     const { boardId } = req.params;
     const boardInfo = boardsService.putBoard(boardId, body);
@@ -32,7 +32,7 @@ export function boardRoutes(fastify:FastifyInstance, options:FastifyPluginOption
    await res.send(boardInfo);
   });
 
-  fastify.delete<requestBoardsParams>('/boards/:boardId',async (req, res) => {
+  fastify.delete<GetBoardReqParams>('/boards/:boardId',async (req, res) => {
     const { boardId } = req.params;
     const result = boardsService.deleteBoardById(boardId);
     if (result === false)await res.status(404).send('Board not found');

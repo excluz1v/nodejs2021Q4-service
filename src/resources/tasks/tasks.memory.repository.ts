@@ -23,7 +23,7 @@ const postTasks = (boardId:string, taskData:taskType) => {
 };
 
 const updateTask = (taskId:string, newTaskInfo:taskType) => {
-  let taskIndex:number;
+  let taskIndex=0;
   tasks = tasks.map((task:Task, index) => {
     if (task.id === taskId) {
       taskIndex = index;

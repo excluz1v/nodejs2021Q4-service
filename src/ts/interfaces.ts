@@ -30,28 +30,64 @@ export interface TaskInterface{
     columnId:string|null,
 }
 
-export interface requestUserParams extends RequestGenericInterface{
-    Params?:{
-        userId?:string
+export interface GetUserReq extends RequestGenericInterface{
+    Params:{
+        userId:string
     },
-    Body?:{
+}
+
+export interface PostUserReq extends RequestGenericInterface{
+    Body:{
         name: string,
         login: string,
         password: string
     }
 }
 
-export interface requestTaskParams extends RequestGenericInterface{
-    Params?:{
-        boardId?:string,
-        taskId?:string
+export interface PutUserReq extends RequestGenericInterface{
+    Params:{
+        userId:string
     },
-    Body?:taskType
+    Body:{
+        name: string,
+        login: string,
+        password: string
+    }
 }
 
-export interface requestBoardsParams extends RequestGenericInterface{
-    Params?:{
-        boardId?:string,
+export interface GetTasksReqParams extends RequestGenericInterface{
+    Params:{
+        boardId:string,
+    }
+}
+
+export interface GetSingleTaskReqParams extends RequestGenericInterface{
+    Params:{
+        boardId:string,
+        taskId:string
     },
-    Body?:BoardInterface
+}
+export interface PostTaskReqParams extends RequestGenericInterface{
+    Params:{
+        boardId:string,
+        taskId:string
+    },
+    Body:taskType
+}
+
+export interface PutBoardReqParams extends RequestGenericInterface{
+    Params:{
+        boardId:string,
+    },
+    Body:BoardInterface
+}
+
+export interface GetBoardReqParams extends RequestGenericInterface{
+    Params:{
+        boardId:string,
+    }
+}
+
+export interface PostBoardReqParams extends RequestGenericInterface{
+    Body:BoardInterface
 }

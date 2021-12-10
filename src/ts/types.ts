@@ -4,13 +4,13 @@ export type userType= {
     password:string,
 }
 export type taskType= {
-    id? :string,
+    id :string,
     title:string,
     order:number,
     description:string,
-    userId:string|null,
-    boardId :string|null,
-    columnId:string|null,
+    userId:string,
+    boardId :string,
+    columnId:string,
 }
 
 export type configType= {

@@ -1,5 +1,5 @@
 import { FastifyInstance, FastifyPluginOptions, FastifyReply } from "fastify";
-import { requestUserParams } from "src/ts/interfaces";
+import { GetUserReq, PostUserReq, PutUserReq } from "src/ts/interfaces";
 import { userSchema } from "./users.schema";
 import {usersService} from './user.service';
 
@@ -32,7 +32,7 @@ export  function userRoutes(fastify:FastifyInstance, options:FastifyPluginOption
     
   });
 
-  fastify.get<requestUserParams>('/users/:userId', userSchema.getUserByIdOpts, async (req, res) => {
+  fastify.get<GetUserReq>('/users/:userId', userSchema.getUserByIdOpts, async (req, res) => {
     const { userId } = req.params;
     const result =  usersService.getUserById(userId);
     if (result === false)await res.status(400).send('User not found');
@@ -41,17 +41,15 @@ export  function userRoutes(fastify:FastifyInstance, options:FastifyPluginOption
     } catch (error) {
       await res.send(404)
     }
-
-   
   });
 
-  fastify.post<requestUserParams>('/users', userSchema.postUserOpts,  async (req, res) => {
+  fastify.post<PostUserReq>('/users', userSchema.postUserOpts,  async (req, res) => {
     const { body } = req;
     const userInfo =  usersService.postUser(body);
    await res.status(201).send(userInfo);
   });
 
-  fastify.put<requestUserParams>('/users/:userId', userSchema.putUserOpts,  async(req, res) => {
+  fastify.put<PutUserReq>('/users/:userId', userSchema.putUserOpts,  async(req, res) => {
     const { body } = req;
     const { userId } = req.params;
     const userInfo =  usersService.putUser(userId, body);
@@ -64,7 +62,7 @@ export  function userRoutes(fastify:FastifyInstance, options:FastifyPluginOption
    
   });
 
-  fastify.delete<requestUserParams>('/users/:userId', async (req, res) => {
+  fastify.delete<GetUserReq>('/users/:userId', async (req, res) => {
     const { userId } = req.params;
     const result =  usersService.deleteUserById(userId);
     if (result === false)await res.status(404).send('User not found');
@@ -73,7 +71,6 @@ export  function userRoutes(fastify:FastifyInstance, options:FastifyPluginOption
     } catch (error) {
       await res.send(404)
     }
-    
   });
 
   done();

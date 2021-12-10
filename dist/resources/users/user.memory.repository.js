@@ -22,7 +22,7 @@ const updateUserById = (id, userCredentials) => {
     const result = users.find((user) => user.id === id);
     if (result === undefined)
         return false;
-    let userIndex;
+    let userIndex = 0;
     users = users.map((user, index) => {
         if (user.id === id) {
             userIndex = index;
