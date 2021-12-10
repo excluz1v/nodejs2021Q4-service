@@ -48,3 +48,10 @@ export interface requestTaskParams extends RequestGenericInterface{
     },
     Body?:taskType
 }
+
+export interface requestBoardsParams extends RequestGenericInterface{
+    Params?:{
+        boardId?:string,
+    },
+    Body?:BoardInterface
+}

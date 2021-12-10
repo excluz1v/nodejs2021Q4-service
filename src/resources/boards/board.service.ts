@@ -28,7 +28,7 @@ const deleteBoardById = (id:string) => {
   return result;
 };
 
-export const boardService = {
+export const boardsService = {
   getAll,
   postBoard,
   getBoardById,
