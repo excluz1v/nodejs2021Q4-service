@@ -17,6 +17,11 @@ export class User implements UserInterface{
     this.password = password;
   }
 
+/**
+ * 
+ * @param user User instance
+ * @returns object with publick properties
+ */
   static toResponse(user:UserInterface) {
     const { id, name, login } = user;
     return { id, name, login };

@@ -4,23 +4,47 @@ import {tasksRepo} from '../tasks/tasks.memory.repository';
 
 let users:[]|User[] = [];
 
+/**
+ * 
+ * @returns array of users instances or empty array
+ */
 const getAll =  () => users;
 
+/**
+ * 
+ * @param user new user data Object
+ * @returns created User instance with public properties
+ */
 const postUser =  (user:userType) => {
   const newUser = new User(user);
   users = [...users, newUser];
   return newUser;
 };
-
+/**
+ * 
+ * @param id user id string
+ * @returns boolean if user exist or not
+ */
 const getUserById =  (id:string) => {
   const result =  users.find((user:User) => user.id === id);
   return result;
 };
+/**
+ * 
+ * @param login user login string
+ * @returns boolean if user exist or not
+ */
 const getUserByLogin =  (login:string) => {
   const result =  users.find((user:User) => user?.login === login);
   return result;
 };
 
+/**
+ * 
+ * @param id user id string
+ * @param userCredentials new user data object
+ * @returns updated user info object
+ */
 const updateUserById =  (id:string, userCredentials:userType):User|false => {
   const result =  users.find((user:User) => user.id === id);
   if (result === undefined) return false;
@@ -35,6 +59,11 @@ const updateUserById =  (id:string, userCredentials:userType):User|false => {
   return users[userIndex];
 };
 
+/**
+ * 
+ * @param id user id string
+ * @returns boolean if user deleted from database
+ */
 const deleteUserById =  (id:string) => {
   const isExist =  getUserById(id);
   if (isExist === undefined) return false;
