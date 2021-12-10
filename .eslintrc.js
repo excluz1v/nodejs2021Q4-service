@@ -46,5 +46,6 @@ module.exports = {
     'no-underscore-dangle': 'off',
     'import/prefer-default-export': 'off',
     'no-void': 0,
+    '@typescript-eslint/no-explicit-any': ['error'],
   },
 };

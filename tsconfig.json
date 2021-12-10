@@ -10,7 +10,8 @@
     "moduleResolution":"Node",
     "rootDir":"./src",
     "baseUrl":".",
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "strict": true
   },
   "include": ["src/**/*", "login"],
   "exclude": ["node_modules", "**/*.spec.ts"]
