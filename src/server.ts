@@ -42,4 +42,4 @@ const start = async () => {
 };
 
 
-Promise.resolve(start()).then(()=>console.log('server started')).catch((er)=>console.log(er)) ;
+void start()

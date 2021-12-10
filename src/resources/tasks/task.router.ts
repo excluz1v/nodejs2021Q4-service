@@ -45,8 +45,7 @@ export  function taskRoutes(fastify:FastifyInstance, options:FastifyPluginOption
     const { boardId, taskId } = req.params;
     const result =  taskService.deleteTaskById(boardId, taskId);
     if (!result)await res.status(404).send('Task not found');
-   await res.status(204);
+   void res.status(204);
   });
-
   done();
 }

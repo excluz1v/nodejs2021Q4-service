@@ -1,12 +1,9 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Task = void 0;
-const uuid_1 = __importDefault(require("uuid"));
+const uuid_1 = require("uuid");
 class Task {
-    constructor({ id = uuid_1.default.v4(), title = '', order = 0, description = '', userId = '', boardId = uuid_1.default.v4(), columnId = '', } = {}) {
+    constructor({ id = (0, uuid_1.v4)(), title = '', order = 0, description = '', userId = '', boardId = (0, uuid_1.v4)(), columnId = '', } = {}) {
         this.id = id;
         this.title = title;
         this.columnId = columnId;

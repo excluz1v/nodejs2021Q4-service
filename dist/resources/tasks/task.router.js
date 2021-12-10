@@ -4,7 +4,6 @@ exports.taskRoutes = void 0;
 const task_service_1 = require("./task.service");
 const task_schema_1 = require("./task.schema");
 function taskRoutes(fastify, options, done) {
-    console.log('3');
     fastify.get('/boards/:boardId/tasks', task_schema_1.taskSchema.getTaskOpts, async (req, res) => {
         const { boardId } = req.params;
         const tasks = task_service_1.taskService.getAll(boardId);
@@ -34,7 +33,7 @@ function taskRoutes(fastify, options, done) {
         const result = task_service_1.taskService.deleteTaskById(boardId, taskId);
         if (!result)
             await res.status(404).send('Task not found');
-        await res.status(204);
+        void res.status(204);
     });
     done();
 }

@@ -4,7 +4,6 @@ exports.boardRoutes = void 0;
 const board_service_1 = require("./board.service");
 const boards_schema_1 = require("./boards.schema");
 function boardRoutes(fastify, options, done) {
-    console.log('2');
     fastify.get('/boards', boards_schema_1.boardSchema.getBoardsOpts, async (req, res) => {
         const boards = board_service_1.boardsService.getAll();
         await res.send(boards);

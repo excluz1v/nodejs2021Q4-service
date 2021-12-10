@@ -10,7 +10,7 @@ const user_router_1 = require("./resources/users/user.router");
 const config_1 = require("./common/config");
 const boards_router_1 = require("./resources/boards/boards.router");
 const task_router_1 = require("./resources/tasks/task.router");
-const server = (0, fastify_1.default)();
+const server = (0, fastify_1.default)({ logger: true });
 const start = async () => {
     try {
         await server.register(fastify_swagger_1.default, {
@@ -28,7 +28,6 @@ const start = async () => {
         await server.register(user_router_1.userRoutes);
         await server.register(boards_router_1.boardRoutes);
         await server.register(task_router_1.taskRoutes);
-        console.log(config_1.config.PORT);
         await server.listen(config_1.config.PORT);
     }
     catch (err) {
@@ -36,5 +35,5 @@ const start = async () => {
         process.exit(1);
     }
 };
-Promise.resolve(start()).then(() => console.log('server started')).catch((er) => console.log(er));
+void start();
 //# sourceMappingURL=server.js.map

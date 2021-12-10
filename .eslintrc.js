@@ -45,6 +45,6 @@ module.exports = {
     'node/no-unsupported-features/es-syntax': 'off',
     'no-underscore-dangle': 'off',
     'import/prefer-default-export': 'off',
-    ignoreVoid: 0,
+    'no-void': 0,
   },
 };
