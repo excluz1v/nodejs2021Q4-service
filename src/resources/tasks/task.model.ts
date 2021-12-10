@@ -1,15 +1,14 @@
 import { TaskInterface } from 'src/ts/interfaces';
-import uuid from 'uuid';
-
+import { v4 as uuidv4 } from 'uuid';
 
 export class Task implements TaskInterface{
   constructor({
-    id = uuid.v4(),
+    id = uuidv4(),
     title='',
     order=0,
     description='',
     userId='',
-    boardId = uuid.v4(),
+    boardId = uuidv4(),
     columnId='',
   } = {}) {
     this.id = id;

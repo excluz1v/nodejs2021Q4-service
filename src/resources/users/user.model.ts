@@ -1,6 +1,5 @@
 import { UserInterface } from 'src/ts/interfaces';
-import uuid from 'uuid';
-
+import { v4 as uuidv4 } from 'uuid';
 
 export class User implements UserInterface{
   name:string;
@@ -11,7 +10,7 @@ export class User implements UserInterface{
 
   id:string;
 
-  constructor({ id = uuid.v4(), name='', login='', password='' } = {}) {
+  constructor({ id = uuidv4(), name='', login='', password='' } = {}) {
     this.id = id;
     this.name = name;
     this.login = login;

@@ -12,6 +12,6 @@
     "baseUrl":".",
     "esModuleInterop": true
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "login"],
   "exclude": ["node_modules", "**/*.spec.ts"]
 }
