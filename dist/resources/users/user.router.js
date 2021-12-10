@@ -4,6 +4,7 @@ exports.userRoutes = void 0;
 const users_schema_1 = require("./users.schema");
 const user_service_1 = require("./user.service");
 function userRoutes(fastify, options, done) {
+    console.log('1');
     fastify.get('/users', users_schema_1.userSchema.getUserOpts, async (req, res) => {
         const users = user_service_1.usersService.getAll();
         try {

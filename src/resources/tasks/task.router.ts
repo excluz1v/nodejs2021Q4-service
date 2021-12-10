@@ -5,6 +5,7 @@ import  {taskSchema} from './task.schema';
 
 
 export  function taskRoutes(fastify:FastifyInstance, options:FastifyPluginOptions, done:()=>void) {
+
   fastify.get<requestTaskParams>('/boards/:boardId/tasks', taskSchema.getTaskOpts, async (req, res) => {
     const { boardId } = req.params;
     const tasks = taskService.getAll(boardId);

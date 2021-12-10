@@ -28,6 +28,7 @@ const start = async () => {
         await server.register(user_router_1.userRoutes);
         await server.register(boards_router_1.boardRoutes);
         await server.register(task_router_1.taskRoutes);
+        console.log(config_1.config.PORT);
         await server.listen(config_1.config.PORT);
     }
     catch (err) {
@@ -35,5 +36,5 @@ const start = async () => {
         process.exit(1);
     }
 };
-Promise.resolve(start).then(() => console.log('server started')).catch((er) => console.log(er));
+Promise.resolve(start()).then(() => console.log('server started')).catch((er) => console.log(er));
 //# sourceMappingURL=server.js.map

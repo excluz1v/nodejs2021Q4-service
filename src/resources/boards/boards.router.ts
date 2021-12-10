@@ -4,6 +4,7 @@ import {boardsService} from './board.service';
 import {boardSchema} from './boards.schema';
 
 export function boardRoutes(fastify:FastifyInstance, options:FastifyPluginOptions, done:()=>void) {
+
   fastify.get('/boards', boardSchema.getBoardsOpts, async (req, res) => {
     const boards = boardsService.getAll();
    await res.send(boards);

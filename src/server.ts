@@ -17,9 +17,9 @@ const server:FastifyInstance=fastify()
 
 
 
-const start = async ():Promise<void> => {
+const start = async () => {
   try {
-  await  server.register(swagger, {
+  await server.register(swagger, {
       mode: 'static',
       routePrefix: '/doc',
       specification: {
@@ -41,4 +41,5 @@ const start = async ():Promise<void> => {
   }
 };
 
-Promise.resolve(start).then(()=>console.log('server started')).catch((er)=>console.log(er)) ;
+
+Promise.resolve(start()).then(()=>console.log('server started')).catch((er)=>console.log(er)) ;
