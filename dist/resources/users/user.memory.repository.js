@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.usersRepo = void 0;
 const user_model_1 = require("./user.model");
-const taskRepo = require("../tasks/tasks.memory.repository");
+const tasks_memory_repository_1 = require("../tasks/tasks.memory.repository");
 let users = [];
 const getAll = () => users;
 const postUser = (user) => {
@@ -37,7 +37,7 @@ const deleteUserById = (id) => {
     if (isExist === undefined)
         return false;
     users = users.filter((user) => user.id !== id);
-    taskRepo.deleteAssignedUsers(id);
+    tasks_memory_repository_1.tasksRepo.deleteAssignedUsers(id);
     return true;
 };
 exports.usersRepo = {

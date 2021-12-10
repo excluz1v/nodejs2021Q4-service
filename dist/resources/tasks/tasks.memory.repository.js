@@ -1,4 +1,6 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.tasksRepo = void 0;
 const task_model_1 = require("./task.model");
 let tasks = [];
 const getAllTasksByBoardId = (boardId) => {
@@ -16,7 +18,7 @@ const postTasks = (boardId, taskData) => {
     tasks = [...tasks, newTask];
     return newTask;
 };
-const updateTask = (boardId, taskId, newTaskInfo) => {
+const updateTask = (taskId, newTaskInfo) => {
     let taskIndex;
     tasks = tasks.map((task, index) => {
         if (task.id === taskId) {
@@ -46,7 +48,7 @@ const deleteAssignedUsers = (userId) => {
 const deleteTaskByBoardId = (boardId) => {
     tasks = tasks.filter((task) => task.boardId !== boardId);
 };
-module.exports = {
+exports.tasksRepo = {
     getAllTasksByBoardId,
     getTaskByBoardIdAndId,
     postTasks,
