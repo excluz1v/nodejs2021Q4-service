@@ -34,6 +34,12 @@ export class Task implements TaskInterface{
 
   columnId: string|null;
 
+
+/**
+ * 
+ * @param task Task class
+ * @returns object with id, title, order, description, userId
+ */
   static toResponse(task:TaskInterface) {
     const { id, title, order, description, userId } = task;
     return { id, title, order, description, userId };

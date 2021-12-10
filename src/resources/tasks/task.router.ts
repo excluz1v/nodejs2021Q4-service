@@ -36,7 +36,7 @@ export  function taskRoutes(fastify:FastifyInstance, options:FastifyPluginOption
    async (req, res) => {
       const { body } = req;
       const { boardId, taskId } = req.params;
-      const taskInfo = taskService.updateTask(boardId, taskId, body);
+      const taskInfo = taskService.updateTask(boardId,taskId, body);
      await res.send(taskInfo);
     }
   );
