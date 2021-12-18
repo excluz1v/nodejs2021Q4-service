@@ -9,6 +9,8 @@
 
 ```
 git clone {repository URL}
+
+git checkout ts-migration
 ```
 
 ## Installing NPM modules

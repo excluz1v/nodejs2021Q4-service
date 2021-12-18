@@ -1,1 +1,5 @@
 test/
+node_modules
+.eslintrc.js
+dist/
+login
