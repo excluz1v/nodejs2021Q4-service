@@ -10,7 +10,7 @@
 ```
 git clone {repository URL}
 
-npm checkout ts-migration
+git checkout ts-migration
 ```
 
 ## Installing NPM modules
