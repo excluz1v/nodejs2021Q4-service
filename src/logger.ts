@@ -1,36 +1,15 @@
 import pino,  { Logger, TransportMultiOptions } from "pino"
+import { config } from "./common/config"
+import { errorOptions, fatalOptions, infoOptions, warnOptions } from "./TransportOptions"
 
-const transportOptions:TransportMultiOptions={
-    targets: [
-    {
-        level:'info',
-        target:'pino-pretty',
-        options: {
-            destination: './logs.log',
-            translateTime: 'HH:MM:ss Z',
-            ignore: 'pid,hostname',
-        }
-    },
-    {
-        level:'info',
-        target:'pino-pretty',
-        options: {
-            translateTime: 'HH:MM:ss Z',
-            ignore: 'pid,hostname',
-        }
-    },
-    {
-        level:'error',
-        target:'pino-pretty',
-        options: {
-            translateTime: 'HH:MM:ss Z',
-            ignore: 'pid,hostname',
-            destination: './errors.log'
-        }
-    }
-]
-}
+const level= config.LOGGING_LEVEL
+const levelTranslate: {[key: string]:TransportMultiOptions} = {
+    '0':infoOptions,
+    '1':warnOptions,
+    '2':errorOptions,
+    '3':fatalOptions
+  }
 
-const transport= pino.transport(transportOptions)
+const transport= pino.transport(levelTranslate[level])
 
 export const logger:Logger= pino(transport)

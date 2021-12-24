@@ -1,6 +1,7 @@
 import fastify, { FastifyInstance} from 'fastify';
 import swagger from 'fastify-swagger';
 import path from 'path';
+import fs from 'fs';
 import {userRoutes} from './resources/users/user.router';
 // const fastifyPlugin from './resources/login/auth');
 // const { AuthRouter } from './resources/login/auth.route');
@@ -17,7 +18,7 @@ const server:FastifyInstance=fastify({logger})
 //   server.register(AuthRouter);
 // }
 
-
+const errorPath=path.resolve(__dirname,'../errors.log')
 
 const start = async () => {
   try {
@@ -37,11 +38,33 @@ const start = async () => {
    await server.register(boardRoutes);
    await server.register(taskRoutes);
     await server.listen(config.PORT);
+    process.on('uncaughtException',(e)=>{
+      const getDateTime = (): string => new Date().toLocaleString();
+      const errorStream = fs.createWriteStream(errorPath, 'utf-8');
+      const errorMessage = `uncaughtException ERROR: ${getDateTime()} ${e.message}\n`;
+    errorStream.write(errorMessage, () => {
+      console.log(errorMessage); 
+    });
+    })
+    process.on('unhandledRejection',(e:Error)=>{
+      const getDateTime = (): string => new Date().toLocaleString();
+      const errorStream = fs.createWriteStream(errorPath, 'utf-8');
+      const errorMessage = `unhandledRejection ERROR: ${getDateTime()} ${e.message}\n`;
+    errorStream.write(errorMessage, () => {
+      console.log(errorMessage); 
+    });
+    })
+
+    // TEST ERROR
+    // await Promise.reject(Error('Oops!'))
+    
   } catch (err) {
     server.log.error(err);
-    process.exit(1);
   }
 };
 
 
 void start()
+
+// TEST ERROR
+// throw new Error('Oops!');
