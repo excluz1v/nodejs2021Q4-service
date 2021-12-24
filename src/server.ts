@@ -57,7 +57,10 @@ const start = async () => {
 
     // TEST ERROR
     // await Promise.reject(Error('Oops!'))
-    
+
+    // TEST ERROR
+// throw new Error('Oops!');
+
   } catch (err) {
     server.log.error(err);
   }
@@ -65,6 +68,3 @@ const start = async () => {
 
 
 void start()
-
-// TEST ERROR
-// throw new Error('Oops!');
