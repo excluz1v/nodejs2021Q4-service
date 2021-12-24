@@ -8,7 +8,18 @@ import {config}  from './common/config';
 import {boardRoutes} from './resources/boards/boards.router';
 import {taskRoutes} from './resources/tasks/task.router';
 
-const server:FastifyInstance=fastify({logger:true})
+
+
+
+const server:FastifyInstance=fastify({logger:{
+  prettyPrint:
+     {
+          translateTime: 'HH:MM:ss Z',
+          ignore: 'pid,hostname',
+          colorize:true
+        },
+        file:'./logs.log'
+}})
 
 // if (AUTH_MODE) {
 //   server.register(fastifyPlugin);
