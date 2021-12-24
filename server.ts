@@ -7,10 +7,11 @@ import {userRoutes} from './resources/users/user.router';
 import {config}  from './common/config';
 import {boardRoutes} from './resources/boards/boards.router';
 import {taskRoutes} from './resources/tasks/task.router';
-import { logger } from './logger';
 
 
-const server:FastifyInstance=fastify({logger})
+
+
+const server:FastifyInstance=fastify({logger:true})
 
 // if (AUTH_MODE) {
 //   server.register(fastifyPlugin);

@@ -47,5 +47,7 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'no-void': 0,
     '@typescript-eslint/no-explicit-any': ['error'],
+    '@typescript-eslint/no-unsafe-assignment': 'off',
+    '@typescript-eslint/no-unsafe-argument': 'off',
   },
 };
