@@ -5,10 +5,8 @@ WORKDIR /docker
 COPY . .
 # копируем исходный код
 
-RUN npm install
+# RUN npm install
 # Если вы создаете сборку для продакшн
 # RUN npm ci --only=production
 
 EXPOSE "${PORT}"
-
-CMD [ "npm", "start" ]

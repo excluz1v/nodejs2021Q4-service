@@ -16,11 +16,11 @@ const server: FastifyInstance = fastify({ logger });
 //   server.register(fastifyPlugin);
 //   server.register(AuthRouter);
 // }
-
 const errorPath = path.resolve(__dirname, '../errors.log');
-
 const start = async () => {
   try {
+    console.log('errorMessage');
+
     await server.register(swagger, {
       mode: 'static',
       routePrefix: '/doc',
