@@ -8,6 +8,8 @@ services:
       #   source: ./src/server.ts
       #   target: /docker/src/server.ts
       - ./src:/docker/src
+      - logs:/docker/logs
+      - db-data:/var/lib/postgresql/data
     ports:
       - ${PORT}:${PORT}
     depends_on:
@@ -32,3 +34,7 @@ networks:
     ipam:
       config:
         - subnet: 192.168.220.0/24
+
+volumes:
+  logs:
+  db-data:

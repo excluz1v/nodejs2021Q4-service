@@ -14,6 +14,20 @@ git clone {repository URL}
 
 ## Deploy
 
+start application
+
+```
+docker-compose up --build
+```
+
+OR
+
 ```
 docker-compose up
+```
+
+stop application
+
+```
+docker-compose down
 ```
