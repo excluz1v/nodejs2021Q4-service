@@ -9,7 +9,6 @@ services:
       #   target: /docker/src/server.ts
       - ./src:/docker/src
       - logs:/docker/logs
-      - db-data:/var/lib/postgresql/data
     ports:
       - ${PORT}:${PORT}
     depends_on:
@@ -19,12 +18,14 @@ services:
       - net
   postgres:
     build: ./postgres
+    # volumes:
+      # - db_data:node_modules/var/lib/postgresql/data
     ports:
       - ${POSTGRES_PORT}:${POSTGRES_PORT}
     environment:
-      - POSTGRES_USER=${POSTGRES_USER}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
-      - POSTGRES_DB=${POSTGRES_DB}
+      POSTGRES_USER: "test"
+      POSTGRES_PASSWORD: "test"
+      POSTGRES_DB: "test"
     networks:
       - net
 
@@ -37,4 +38,4 @@ networks:
 
 volumes:
   logs:
-  db-data:
+#   db-data:
