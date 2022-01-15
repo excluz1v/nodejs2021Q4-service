@@ -54,13 +54,17 @@
     "fastify-plugin": "^3.0.0",
     "fastify-serve-swagger-ui": "^1.0.0",
     "fastify-swagger": "^4.12.6",
+    "pg": "^8.7.1",
     "pino": "^7.6.1",
     "pino-pretty": "^7.3.0",
+    "reflect-metadata": "^0.1.13",
+    "ts-node": "10.4.0",
+    "typeorm": "^0.2.41",
     "uuid": "8.3.2",
-    "yamljs": "0.3.0",
-    "ts-node": "10.4.0"
+    "yamljs": "0.3.0"
   },
   "devDependencies": {
+    "@types/node": "^17.0.8",
     "@types/pino": "^7.0.5",
     "@typescript-eslint/eslint-plugin": "^5.6.0",
     "@typescript-eslint/parser": "^5.6.0",
