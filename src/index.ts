@@ -12,8 +12,6 @@ import { boardRoutes } from './resources/boards/boards.router';
 import { taskRoutes } from './resources/tasks/task.router';
 import { logger } from './logger';
 
-import { User } from './entity/User';
-
 const server: FastifyInstance = fastify({ logger });
 
 async function main() {

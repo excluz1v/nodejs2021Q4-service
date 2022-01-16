@@ -1,21 +1,21 @@
-import { userType } from "src/ts/types";
-import { User } from "./user.model";
-import {tasksRepo} from '../tasks/tasks.memory.repository';
+import { userType } from 'src/ts/types';
+import { getConnection, getConnectionManager } from 'typeorm';
+import { User } from './user.model';
+import { tasksRepo } from '../tasks/tasks.memory.repository';
 
-let users:[]|User[] = [];
-
+let users: [] | User[] = [];
 /**
  * receive all users from database
  * @returns array of users instances or empty array
  */
-const getAll =  () => users;
+const getAll = () => users;
 
 /**
  * create new user
  * @param user new user data Object
  * @returns created User instance with public properties
  */
-const postUser =  (user:userType) => {
+const postUser = (user: userType) => {
   const newUser = new User(user);
   users = [...users, newUser];
   return newUser;
@@ -25,8 +25,8 @@ const postUser =  (user:userType) => {
  * @param id user id string
  * @returns boolean if user exist or not
  */
-const getUserById =  (id:string) => {
-  const result =  users.find((user:User) => user.id === id);
+const getUserById = (id: string) => {
+  const result = users.find((user: User) => user.id === id);
   return result;
 };
 /**
@@ -34,8 +34,8 @@ const getUserById =  (id:string) => {
  * @param login user login string
  * @returns boolean if user exist or not
  */
-const getUserByLogin =  (login:string) => {
-  const result =  users.find((user:User) => user?.login === login);
+const getUserByLogin = (login: string) => {
+  const result = users.find((user: User) => user?.login === login);
   return result;
 };
 
@@ -45,10 +45,13 @@ const getUserByLogin =  (login:string) => {
  * @param userCredentials new user data object
  * @returns updated user info object
  */
-const updateUserById =  (id:string, userCredentials:userType):User|false => {
-  const result =  users.find((user:User) => user.id === id);
+const updateUserById = (
+  id: string,
+  userCredentials: userType
+): User | false => {
+  const result = users.find((user: User) => user.id === id);
   if (result === undefined) return false;
-  let userIndex=0;
+  let userIndex = 0;
   users = users.map((user, index) => {
     if (user.id === id) {
       userIndex = index;
@@ -64,15 +67,15 @@ const updateUserById =  (id:string, userCredentials:userType):User|false => {
  * @param id user id string
  * @returns boolean if user deleted from database
  */
-const deleteUserById =  (id:string) => {
-  const isExist =  getUserById(id);
+const deleteUserById = (id: string) => {
+  const isExist = getUserById(id);
   if (isExist === undefined) return false;
-  users =  users.filter((user:User) => user.id !== id);
+  users = users.filter((user: User) => user.id !== id);
   tasksRepo.deleteAssignedUsers(id);
   return true;
 };
 
-export const usersRepo= {
+export const usersRepo = {
   getAll,
   postUser,
   getUserById,

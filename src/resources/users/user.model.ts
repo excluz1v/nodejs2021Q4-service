@@ -1,31 +1,29 @@
 import { UserInterface } from 'src/ts/interfaces';
 import { v4 as uuidv4 } from 'uuid';
 
-export class User implements UserInterface{
-  name:string;
+export class User implements UserInterface {
+  name: string;
 
-  login:string;
+  login: string;
 
-  password:string;
+  password: string;
 
-  id:string;
+  id: string;
 
-  constructor({ id = uuidv4(), name='', login='', password='' } = {}) {
+  constructor({ id = uuidv4(), name = '', login = '', password = '' } = {}) {
     this.id = id;
     this.name = name;
     this.login = login;
     this.password = password;
   }
 
-/**
- * hide private information
- * @param user User instance
- * @returns object with public properties
- */
-  static toResponse(user:UserInterface) {
+  /**
+   * hide private information
+   * @param user User instance
+   * @returns object with public properties
+   */
+  static toResponse(user: UserInterface) {
     const { id, name, login } = user;
     return { id, name, login };
   }
 }
-
-
