@@ -10,19 +10,12 @@ import { v4 as uuidv4 } from 'uuid';
 import Board from '../boards/board.model';
 import User from '../users/user.model';
 
-export interface IBoard {
-  id: string;
-  title: string;
-}
-
 @Entity()
 class Task extends BaseEntity {
   @PrimaryColumn()
   id: string;
 
-  @Column({
-    length: 100,
-  })
+  @Column('text')
   title: string;
 
   @Column()
@@ -34,14 +27,20 @@ class Task extends BaseEntity {
   @Column({ nullable: true })
   userId: string | null;
 
-  @ManyToOne(() => User, (task) => task.id, { onDelete: 'SET NULL' })
+  @ManyToOne(() => User, (task) => task.id, {
+    onDelete: 'SET NULL',
+    onUpdate: 'CASCADE',
+  })
   @JoinColumn({ name: 'userId' })
   user: User | null;
 
   @Column()
   boardId: string;
 
-  @ManyToOne(() => Board, (board) => board.id, { onDelete: 'CASCADE' })
+  @ManyToOne(() => Board, (board) => board.id, {
+    onDelete: 'CASCADE',
+    onUpdate: 'CASCADE',
+  })
   @JoinColumn({ name: 'boardId' })
   board: Board;
 

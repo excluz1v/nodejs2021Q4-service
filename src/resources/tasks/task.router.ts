@@ -74,9 +74,12 @@ export function taskRoutes(
             description,
             columnId,
             board,
-            user
+            user,
+            boardId,
+            userId
           );
 
+          console.log(newTask);
           await Task.save(newTask).then((r) => res.status(201).send(newTask));
         } else await res.status(404).send(`Board ${boardId} is not found`);
       } catch (error) {
@@ -96,15 +99,22 @@ export function taskRoutes(
           const { title, order, description, userId, columnId } = req.body;
 
           const user = userId === null ? null : await getUser(userId);
-          console.log(task);
-          console.log(user);
+
           task.title = title || task.title;
           task.order = order || task.order;
           task.description = description || task.description;
           task.user = user;
           task.columnId = columnId || task.columnId;
-          console.log(task);
-          await Task.save(task).then((r) => res.send(task));
+
+          await Task.save(task).then((r) =>
+            res.send({
+              id: task.id,
+              title: task.title,
+              order: task.order,
+              description: task.description,
+              userId: task.userId,
+            })
+          );
         } else
           await res
             .status(404)

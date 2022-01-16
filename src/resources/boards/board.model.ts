@@ -2,12 +2,6 @@ import { Entity, Column, BaseEntity, PrimaryColumn, OneToMany } from 'typeorm';
 import { v4 as uuidv4 } from 'uuid';
 import Columns from '../column/Column.model';
 
-export interface IColumns {
-  id: string;
-  order: number;
-  title: string;
-}
-
 @Entity()
 class Board extends BaseEntity {
   @PrimaryColumn()
