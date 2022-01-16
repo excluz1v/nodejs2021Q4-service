@@ -1,7 +1,6 @@
 import { FastifyInstance, FastifyPluginOptions, FastifyReply } from 'fastify';
 import { GetUserReq, PostUserReq, PutUserReq } from 'src/ts/interfaces';
 import { userSchema } from './users.schema';
-import { usersService } from './user.service';
 import User from './user.model';
 
 // function addAuthValidation(schema, preValidation) {
@@ -30,7 +29,8 @@ export function userRoutes(
     '/users',
     userSchema.getUserOpts,
     async (req, res: FastifyReply) => {
-      const users = usersService.getAll(req, res);
+      const users = await User.find();
+      await res.send(users);
       try {
         await res.send(users);
       } catch (error) {
