@@ -64,7 +64,7 @@ export function boardRoutes(
         const board = await Board.findOne(newBoard.id, {
           relations: ['columns'],
         });
-        await res.status(201).send(board);
+        await res.code(201).send(board);
       } catch (error) {
         console.log(error);
       }
@@ -84,7 +84,7 @@ export function boardRoutes(
           board.title = title || board.title;
           await Board.save(board);
           await res.send(board);
-        } else await res.status(400).send('Board not found');
+        } else await res.status(404).send('Board not found');
       } catch (error) {
         console.log(error);
       }

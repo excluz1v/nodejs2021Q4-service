@@ -14,6 +14,7 @@ import { logger } from './logger';
 import User from './resources/users/user.model';
 import Board from './resources/boards/board.model';
 import Columns from './resources/column/Column.model';
+import Task from './resources/tasks/task.model';
 
 const server: FastifyInstance = fastify({ logger: false });
 
@@ -26,7 +27,7 @@ async function main() {
       username: config.POSTGRES_USER,
       password: config.POSTGRES_PASSWORD,
       database: config.POSTGRES_DB,
-      entities: [User, Board, Columns],
+      entities: [User, Board, Columns, Task],
       logging: false,
       synchronize: false,
       migrations: ['src/migration/*.ts'],
@@ -67,7 +68,7 @@ const start = async () => {
     });
     await server.register(userRoutes);
     await server.register(boardRoutes);
-    // await server.register(taskRoutes);
+    await server.register(taskRoutes);
     await server.listen(config.PORT);
     process.on('uncaughtException', (e) => {
       const getDateTime = (): string => new Date().toLocaleString();

@@ -46,7 +46,6 @@ export function userRoutes(
       try {
         const { userId } = req.params;
         const user = await User.findOne(userId);
-        console.log('get all users', user);
         if (user) {
           await res.send(user);
         } else {
