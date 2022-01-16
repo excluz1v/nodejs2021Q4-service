@@ -1,6 +1,5 @@
 import { userType } from 'src/ts/types';
-import { getConnection, getConnectionManager } from 'typeorm';
-import { User } from './user.model';
+import User from './user.model';
 import { tasksRepo } from '../tasks/tasks.memory.repository';
 
 let users: [] | User[] = [];
@@ -15,11 +14,7 @@ const getAll = () => users;
  * @param user new user data Object
  * @returns created User instance with public properties
  */
-const postUser = (user: userType) => {
-  const newUser = new User(user);
-  users = [...users, newUser];
-  return newUser;
-};
+const postUser = (user: userType) => true;
 /**
  * receive single user by id
  * @param id user id string
@@ -45,22 +40,7 @@ const getUserByLogin = (login: string) => {
  * @param userCredentials new user data object
  * @returns updated user info object
  */
-const updateUserById = (
-  id: string,
-  userCredentials: userType
-): User | false => {
-  const result = users.find((user: User) => user.id === id);
-  if (result === undefined) return false;
-  let userIndex = 0;
-  users = users.map((user, index) => {
-    if (user.id === id) {
-      userIndex = index;
-      return { ...user, ...userCredentials };
-    }
-    return user;
-  });
-  return users[userIndex];
-};
+const updateUserById = (id: string, userCredentials: userType) => true;
 
 /**
  * delete user from database by id

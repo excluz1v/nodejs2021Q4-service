@@ -1,15 +1,19 @@
-import { userType } from "src/ts/types";
-import { usersRepo } from "./user.memory.repository";
-import { User } from "./user.model";
+import { FastifyReply, FastifyRequest } from 'fastify';
+import { userType } from 'src/ts/types';
+import { usersRepo } from './user.memory.repository';
+import User from './user.model';
 
 /**
  * receive all users from database
  * @returns array of users instances or empty array
  */
-const getAll =  () =>{
-const users= usersRepo.getAll()
-const result=users.map(el=> User.toResponse(el))
-return result
+const getAll = async (req: FastifyRequest, res: FastifyReply) => {
+  try {
+    const users = await User.find();
+    res.send(users).log.debug(`Users received from the base`);
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 /**
@@ -17,10 +21,7 @@ return result
  * @param userCredentials new user data Object
  * @returns created User instance with public properties
  */
-const postUser =  (userCredentials:userType) => {
-  const newUser =  usersRepo.postUser(userCredentials);
-  return User.toResponse(newUser);
-};
+const postUser = (userCredentials: userType) => true;
 
 /**
  * receive single user by id
@@ -28,11 +29,7 @@ const postUser =  (userCredentials:userType) => {
  * @returns false if user not exist or user object with public properties
  */
 
-const getUserById =  (id:string) => {
-  const result =  usersRepo.getUserById(id);
-  if (result === undefined) return false;
-  return User.toResponse(result);
-};
+const getUserById = (id: string) => true;
 
 /**
  * update certain user in database
@@ -41,11 +38,7 @@ const getUserById =  (id:string) => {
  * @returns updated user info object with publick properties
  */
 
-const putUser =  (id:string, userCredentials:userType) => {
-  const updatedUser =  usersRepo.updateUserById(id, userCredentials);
-  if (updatedUser === false) return false;
-  return User.toResponse(updatedUser);
-};
+const putUser = (id: string, userCredentials: userType) => true;
 
 /**
  * delete user from database by id
@@ -53,9 +46,12 @@ const putUser =  (id:string, userCredentials:userType) => {
  * @returns boolean if user deleted from database
  */
 
-const deleteUserById =  (id:string) => {
-  const result =  usersRepo.deleteUserById(id);
-  return result;
-};
+const deleteUserById = (id: string) => true;
 
-export const usersService = { getAll, postUser, getUserById, putUser, deleteUserById };
+export const usersService = {
+  getAll,
+  postUser,
+  getUserById,
+  putUser,
+  deleteUserById,
+};
