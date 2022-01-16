@@ -12,6 +12,8 @@ import { boardRoutes } from './resources/boards/boards.router';
 import { taskRoutes } from './resources/tasks/task.router';
 import { logger } from './logger';
 import User from './resources/users/user.model';
+import Board from './resources/boards/board.model';
+import Columns from './resources/column/Column.model';
 
 const server: FastifyInstance = fastify({ logger: false });
 
@@ -24,7 +26,7 @@ async function main() {
       username: config.POSTGRES_USER,
       password: config.POSTGRES_PASSWORD,
       database: config.POSTGRES_DB,
-      entities: [User],
+      entities: [User, Board, Columns],
       logging: false,
       synchronize: false,
       migrations: ['src/migration/*.ts'],
@@ -64,7 +66,7 @@ const start = async () => {
       exposeRoute: true,
     });
     await server.register(userRoutes);
-    // await server.register(boardRoutes);
+    await server.register(boardRoutes);
     // await server.register(taskRoutes);
     await server.listen(config.PORT);
     process.on('uncaughtException', (e) => {

@@ -1,27 +1,32 @@
-import {  BoardInterface, ColumnInterface } from 'src/ts/interfaces';
+import { Entity, Column, BaseEntity, PrimaryColumn, OneToMany } from 'typeorm';
 import { v4 as uuidv4 } from 'uuid';
-import {Column} from '../column/Column.model';
+import Columns from '../column/Column.model';
 
+export interface IColumns {
+  id: string;
+  order: number;
+  title: string;
+}
 
-export class Board implements BoardInterface {
-  constructor({ id = uuidv4(), title, columns }:BoardInterface) {
-    this.id = id;
-    this.title = title;
-    this.columns = Board.createColumn(columns);
-  }
-
+@Entity()
+class Board extends BaseEntity {
+  @PrimaryColumn()
   id: string;
 
+  @Column({
+    length: 100,
+  })
   title: string;
 
-  columns: ColumnInterface[];
+  @OneToMany(() => Columns, (columns) => columns.board)
+  columns: Columns[] | undefined;
 
-/**
- * 
- * @param ArrOfColumns array of columns
- * @returns created array with Column instances
- */
-  static createColumn(ArrOfColumns:ColumnInterface[]|[]) {
-    return [...ArrOfColumns].map((col) => new Column(col));
+  constructor(title: string, columns?: Columns[]) {
+    super();
+    this.id = uuidv4();
+    this.title = title;
+    this.columns = columns;
   }
 }
+
+export default Board;
