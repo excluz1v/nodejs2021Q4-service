@@ -17,39 +17,41 @@ import { User } from './entity/User';
 const server: FastifyInstance = fastify({ logger });
 
 async function main() {
-try {
- await createConnection({
-  type: "postgres",
-  host: "host.docker.internal",
-  port: 5432,
-  username: "test",
-  password: "test",
-  database: "test",
-  entities: [
-      User
-  ],
-  synchronize: true,
-  logging: false
-})
-    .then(async (connection) => {
-      console.log('Inserting a new user into the database...');
-      const user = new User();
-      user.firstName = 'Timber';
-      user.lastName = 'Saw';
-      user.age = 25;
-      await connection.manager.save(user);
-      console.log(`Saved a new user with id:%${user.id} `);
-  
-      console.log('Loading users from the database...');
-      const users = await connection.manager.find(User);
-      console.log('Loaded users: ', users);
-  
-      console.log('Here you can setup and run express/koa/any other framework.');
+  try {
+    await createConnection({
+      type: 'postgres',
+      host: 'postgres',
+      port: config.POSTGRES_PORT,
+      username: config.POSTGRES_USER,
+      password: config.POSTGRES_PASSWORD,
+      database: config.POSTGRES_DB,
+      // entities: [User],
+      logging: false,
+      synchronize: true,
+      migrations: ['src/migration/*.ts'],
+      migrationsRun: true,
     })
-    .catch((error) => console.log(error));
-} catch(err){
-  console.log(err)
-}
+      .then((connection) => {
+        console.log('Inserting a new user into the database...');
+        // const user = new User();
+        // user.firstName = 'Timber';
+        // user.lastName = 'Saw';
+        // user.age = 25;
+        // await connection.manager.save(user);
+        // console.log(`Saved a new user with id:%${user.id} `);
+
+        // console.log('Loading users from the database...');
+        // const users = await connection.manager.find(User);
+        // console.log('Loaded users: ', users);
+
+        console.log(
+          'Here you can setup and run express/koa/any other framework.'
+        );
+      })
+      .catch((error) => console.log(error));
+  } catch (err) {
+    console.log(err);
+  }
 }
 
 // if (AUTH_MODE) {
@@ -81,8 +83,9 @@ const start = async () => {
     process.on('uncaughtException', (e) => {
       const getDateTime = (): string => new Date().toLocaleString();
       const errorStream = fs.createWriteStream(errorPath, 'utf-8');
-      const errorMessage = `uncaughtException ERROR: ${getDateTime()} ${e.message
-        }\n`;
+      const errorMessage = `uncaughtException ERROR: ${getDateTime()} ${
+        e.message
+      }\n`;
       errorStream.write(errorMessage, () => {
         console.log(errorMessage);
       });
@@ -91,8 +94,9 @@ const start = async () => {
     process.on('unhandledRejection', (e: Error) => {
       const getDateTime = (): string => new Date().toLocaleString();
       const errorStream = fs.createWriteStream(errorPath, 'utf-8');
-      const errorMessage = `unhandledRejection ERROR: ${getDateTime()} ${e.message
-        }\n`;
+      const errorMessage = `unhandledRejection ERROR: ${getDateTime()} ${
+        e.message
+      }\n`;
       errorStream.write(errorMessage, () => {
         console.log(errorMessage);
       });
@@ -108,5 +112,6 @@ const start = async () => {
   }
 };
 
-main().then(()=>start()).catch((er)=>console.log(er))
-
+main()
+  .then(() => start())
+  .catch((er) => console.log(er));
