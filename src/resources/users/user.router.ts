@@ -46,6 +46,7 @@ export function userRoutes(
       try {
         const { userId } = req.params;
         const user = await User.findOne(userId);
+        console.log('get all users', user);
         if (user) {
           await res.send(user);
         } else {
@@ -61,9 +62,15 @@ export function userRoutes(
     '/users',
     userSchema.postUserOpts,
     async (req, res) => {
-      const { body } = req;
-      const userInfo = usersService.postUser(body);
-      await res.status(201).send(userInfo);
+      try {
+        const { name, login, password } = req.body;
+        const newUser = new User(name, login, password);
+
+        await User.save(newUser);
+        await res.status(201).send(newUser);
+      } catch (error) {
+        console.log(error);
+      }
     }
   );
 
@@ -71,12 +78,17 @@ export function userRoutes(
     '/users/:userId',
     userSchema.putUserOpts,
     async (req, res) => {
-      const { body } = req;
-      const { userId } = req.params;
-      const userInfo = usersService.putUser(userId, body);
-      if (userInfo === false) await res.status(400).send('User not found');
       try {
-        await res.send(userInfo);
+        const { name, login, password } = req.body;
+        const { userId } = req.params;
+        const user = await User.findOne(userId);
+        if (user) {
+          user.name = name || user.name;
+          user.login = login || user.login;
+          user.password = password || user.password;
+          await User.save(user);
+          await res.send(user);
+        }
       } catch (error) {
         await res.send(404);
       }
@@ -84,13 +96,15 @@ export function userRoutes(
   );
 
   fastify.delete<GetUserReq>('/users/:userId', async (req, res) => {
-    const { userId } = req.params;
-    const result = usersService.deleteUserById(userId);
-    if (result === false) await res.status(404).send('User not found');
     try {
-      await res.status(204).send();
+      const { userId } = req.params;
+      const user = await User.findOne(userId);
+      if (user) {
+        await User.remove(user);
+        await res.status(204).send();
+      } else await res.status(404).send('User not found');
     } catch (error) {
-      await res.send(404);
+      console.log(error);
     }
   });
 

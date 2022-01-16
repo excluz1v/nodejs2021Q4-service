@@ -14,7 +14,7 @@ export class PostRefactoring1642325483900 implements MigrationInterface {
       `ALTER TABLE "columns" DROP CONSTRAINT "FK_3f88407849daf390e93035b15ef"`
     );
     await queryRunner.query(`DROP TABLE "task"`);
-    await queryRunner.query(`DROP TABLE "testusers"`);
+    await queryRunner.query(`DROP TABLE "user"`);
     await queryRunner.query(`DROP TABLE "board"`);
     await queryRunner.query(`DROP TABLE "columns"`);
     return this;
@@ -33,7 +33,7 @@ export class PostRefactoring1642325483900 implements MigrationInterface {
       `CREATE TABLE "board" ("id" character varying NOT NULL, "title" character varying(100) NOT NULL, CONSTRAINT "PK_865a0f2e22c140d261b1df80eb1" PRIMARY KEY ("id"))`
     );
     await queryRunner.query(
-      `CREATE TABLE "testusers" (
+      `CREATE TABLE "user" (
       "id" character varying NOT NULL,
       "name" character varying(50) NOT NULL, 
       "login" character varying(50) NOT NULL, 
@@ -51,7 +51,7 @@ export class PostRefactoring1642325483900 implements MigrationInterface {
       `ALTER TABLE "columns" ADD CONSTRAINT "FK_3f88407849daf390e93035b15ef" FOREIGN KEY ("board_id") REFERENCES "board"("id") ON DELETE CASCADE ON UPDATE NO ACTION`
     );
     await queryRunner.query(
-      `ALTER TABLE "task" ADD CONSTRAINT "FK_f316d3fe53497d4d8a2957db8b9" FOREIGN KEY ("userId") REFERENCES "testusers"("id") ON DELETE SET NULL ON UPDATE NO ACTION`
+      `ALTER TABLE "task" ADD CONSTRAINT "FK_f316d3fe53497d4d8a2957db8b9" FOREIGN KEY ("userId") REFERENCES "user"("id") ON DELETE SET NULL ON UPDATE NO ACTION`
     );
     await queryRunner.query(
       `ALTER TABLE "task" ADD CONSTRAINT "FK_d88edac9d7990145ff6831a7bb3" FOREIGN KEY ("boardId") REFERENCES "board"("id") ON DELETE CASCADE ON UPDATE NO ACTION`

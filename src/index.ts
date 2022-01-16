@@ -11,8 +11,9 @@ import { config } from './common/config';
 import { boardRoutes } from './resources/boards/boards.router';
 import { taskRoutes } from './resources/tasks/task.router';
 import { logger } from './logger';
+import User from './resources/users/user.model';
 
-const server: FastifyInstance = fastify({ logger });
+const server: FastifyInstance = fastify({ logger: false });
 
 async function main() {
   try {
@@ -23,25 +24,13 @@ async function main() {
       username: config.POSTGRES_USER,
       password: config.POSTGRES_PASSWORD,
       database: config.POSTGRES_DB,
-      // entities: [User],
+      entities: [User],
       logging: false,
-      synchronize: true,
+      synchronize: false,
       migrations: ['src/migration/*.ts'],
       migrationsRun: true,
     })
       .then((connection) => {
-        console.log('Inserting a new user into the database...');
-        // const user = new User();
-        // user.firstName = 'Timber';
-        // user.lastName = 'Saw';
-        // user.age = 25;
-        // await connection.manager.save(user);
-        // console.log(`Saved a new user with id:%${user.id} `);
-
-        // console.log('Loading users from the database...');
-        // const users = await connection.manager.find(User);
-        // console.log('Loaded users: ', users);
-
         console.log(
           'Here you can setup and run express/koa/any other framework.'
         );
@@ -55,7 +44,7 @@ async function main() {
 // if (AUTH_MODE) {
 //   server.register(fastifyPlugin);
 //   server.register(AuthRouter);
-// // }
+// //
 
 const errorPath = path.resolve(__dirname, '../errors.log');
 const start = async () => {
@@ -75,8 +64,8 @@ const start = async () => {
       exposeRoute: true,
     });
     await server.register(userRoutes);
-    await server.register(boardRoutes);
-    await server.register(taskRoutes);
+    // await server.register(boardRoutes);
+    // await server.register(taskRoutes);
     await server.listen(config.PORT);
     process.on('uncaughtException', (e) => {
       const getDateTime = (): string => new Date().toLocaleString();
@@ -99,17 +88,9 @@ const start = async () => {
         console.log(errorMessage);
       });
     });
-
-    // TEST ERROR
-    // await Promise.reject(Error('Oops!'))
-
-    // TEST ERROR
-    // throw new Error('Oops!');
+    await main();
   } catch (err) {
     server.log.error(err);
   }
 };
-
-main()
-  .then(() => start())
-  .catch((er) => console.log(er));
+start().catch((err) => console.log(err));
