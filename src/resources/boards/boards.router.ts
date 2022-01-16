@@ -6,7 +6,6 @@ import {
 } from 'src/ts/interfaces';
 import Columns from '../column/Column.model';
 import Board from './board.model';
-import { boardsService } from './board.service';
 import { boardSchema } from './boards.schema';
 
 export function boardRoutes(
