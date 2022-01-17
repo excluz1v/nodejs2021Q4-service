@@ -29,7 +29,6 @@ class Task extends BaseEntity {
 
   @ManyToOne(() => User, (task) => task.id, {
     onDelete: 'SET NULL',
-    onUpdate: 'CASCADE',
   })
   @JoinColumn({ name: 'userId' })
   user: User | null;
@@ -39,7 +38,6 @@ class Task extends BaseEntity {
 
   @ManyToOne(() => Board, (board) => board.id, {
     onDelete: 'CASCADE',
-    onUpdate: 'CASCADE',
   })
   @JoinColumn({ name: 'boardId' })
   board: Board;
