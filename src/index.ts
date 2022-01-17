@@ -52,8 +52,6 @@ async function main() {
 const errorPath = path.resolve(__dirname, '../errors.log');
 const start = async () => {
   try {
-    console.log('errorMessage');
-
     await server.register(swagger, {
       mode: 'static',
       routePrefix: '/doc',

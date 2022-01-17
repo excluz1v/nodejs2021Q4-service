@@ -30,7 +30,9 @@ docker-compose up --build
 
 wait for container is build
 
-run tests
+## Run tests
+
+open new console
 
 ```
 docker exec -it nodejs2021q4-service-node-1 npm run test
