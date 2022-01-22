@@ -1,5 +1,6 @@
 import { Entity, Column, BaseEntity, PrimaryColumn } from 'typeorm';
 import { v4 as uuidv4 } from 'uuid';
+import bcrypt from 'bcrypt'
 
 /** The class to create a user instance */
 @Entity()
@@ -17,9 +18,7 @@ class User extends BaseEntity {
   })
   login: string;
 
-  @Column({
-    length: 50,
-  })
+  @Column("text")
   password: string;
 
   /**
@@ -38,5 +37,4 @@ class User extends BaseEntity {
     this.password = password;
   }
 }
-
 export default User;

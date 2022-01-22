@@ -22,3 +22,4 @@ export const authPlugin = fp(async (fastify: FastifyInstance) => {
     }
   });
 });
+

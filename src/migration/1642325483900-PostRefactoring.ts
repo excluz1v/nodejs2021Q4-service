@@ -1,4 +1,5 @@
 import { MigrationInterface, QueryRunner } from 'typeorm';
+import bcrypt from 'bcrypt'
 
 export class PostRefactoring1642325483900 implements MigrationInterface {
   name?: string | undefined;
@@ -40,9 +41,12 @@ export class PostRefactoring1642325483900 implements MigrationInterface {
       "id" character varying NOT NULL,
       "name" character varying(50) NOT NULL, 
       "login" character varying(50) NOT NULL, 
-      "password" character varying(50) NOT NULL, 
+      "password" text NOT NULL, 
       CONSTRAINT "PK_cace4a159ff9f2512dd42373760" PRIMARY KEY ("id"))`
     );
+    // creating admin
+    const adminPasswordWithHash: string = bcrypt.hashSync('admin', 10)
+    await queryRunner.query(`INSERT INTO "user" (name, login, password) VALUES ('admin', 'admin', ${adminPasswordWithHash});`)
     await queryRunner.query(
       `CREATE TABLE "task" (
       "id" character varying NOT NULL,
@@ -63,6 +67,7 @@ export class PostRefactoring1642325483900 implements MigrationInterface {
     await queryRunner.query(
       `ALTER TABLE "task" ADD CONSTRAINT "FK_d88edac9d7990145ff6831a7bb3" FOREIGN KEY ("boardId") REFERENCES "board"("id") ON DELETE CASCADE ON UPDATE NO ACTION`
     );
+
     return this;
   }
 }
