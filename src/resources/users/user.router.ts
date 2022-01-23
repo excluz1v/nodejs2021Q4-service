@@ -1,29 +1,15 @@
 import { FastifyInstance, FastifyPluginOptions, FastifyReply } from 'fastify';
 import { GetUserReq, PostUserReq, PutUserReq } from 'src/ts/interfaces';
+import bcrypt from 'bcrypt'
 import { userSchema } from './users.schema';
 import User from './user.model';
 
-// function addAuthValidation(schema, preValidation) {
-//   if (AUTH_MODE) {
-//     const validatedSchema = { ...schema };
-//     validatedSchema.preValidation = preValidation;
-//     return validatedSchema;
-//   }
-//   return schema;
-// }
 
 export function userRoutes(
   fastify: FastifyInstance,
   options: FastifyPluginOptions,
   done: () => void
 ) {
-  // AUTHENTICATE
-  // const getUserOpts = addAuthValidation(userSchema.getUserOpts, [fastify.auth]);
-  // const getUserByIdOpts = addAuthValidation(userSchema.getUserByIdOpts, [
-  //   fastify.auth,
-  // ]);
-  // const putUserOpts = addAuthValidation(userSchema.putUserOpts, [fastify.auth]);
-  // const deleteUserOpts = addAuthValidation({}, [fastify.auth]);
 
   fastify.get(
     '/users',
@@ -62,9 +48,10 @@ export function userRoutes(
     userSchema.postUserOpts,
     async (req, res) => {
       try {
-        const { name, login, password } = req.body;
+        let { password } = req.body;
+        const { name, login, } = req.body
+        password = bcrypt.hashSync(password, 10)
         const newUser = new User(name, login, password);
-
         await User.save(newUser);
         await res.status(201).send(newUser);
       } catch (error) {

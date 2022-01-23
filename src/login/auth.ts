@@ -11,15 +11,16 @@ export const authPlugin = fp(async (fastify: FastifyInstance) => {
     if (request.url === '/'
       || opensUrls.some(url => request.url.startsWith(url))) return
     if (request.headers.authorization) {
-      const token = request.headers.authorization
+      const token = request.headers.authorization.replace(/Bearer /, '')
       const secretKey = config.JWT_SECRET_KEY
-
       try {
-        jwt.verify(token, secretKey)
+        await jwt.verify(token, secretKey)
+        return
       } catch (error) {
-        reply.status(401).send('wrong password')
+        reply.status(401).send('Unauthorized')
       }
     }
+    reply.status(401).send('Unauthorized')
   });
 });
 
