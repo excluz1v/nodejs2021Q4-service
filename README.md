@@ -11,12 +11,12 @@ git clone https://github.com/excluz1v/nodejs2021Q4-service.git
 switch branch
 
 ```
-git checkout typeORM
+git checkout authentication
 ```
 
 ## Deploy
 
-install dpackages
+install packages
 
 ```
 npm i
@@ -35,7 +35,7 @@ wait for container is build
 open new console
 
 ```
-docker exec -it nodejs2021q4-service-node-1 npm run test
+npm run test:auth
 ```
 
 stop application
