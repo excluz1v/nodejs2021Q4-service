@@ -1,0 +1,1922 @@
+[09:36:07 UTC] [32mINFO[39m: [36mServer listening at http://127.0.0.1:4000[39m
+[09:36:08 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-1"
+    req: {
+      "method": "POST",
+      "url": "/boards",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58781
+    }
+[09:36:08 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-1"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 25.35409999638796
+[09:36:08 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-2"
+    req: {
+      "method": "GET",
+      "url": "/boards",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58782
+    }
+[09:36:08 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-2"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 2.677499994635582
+[09:36:08 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-3"
+    req: {
+      "method": "GET",
+      "url": "/boards",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58783
+    }
+[09:36:08 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-3"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 0.6793999969959259
+[09:36:08 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-4"
+    req: {
+      "method": "GET",
+      "url": "/boards/29e58cf1-9a91-4b19-b8da-0c61bd901e42",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58784
+    }
+[09:36:08 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-4"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 1.4941999986767769
+[09:36:08 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-5"
+    req: {
+      "method": "POST",
+      "url": "/boards",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58785
+    }
+[09:36:08 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-5"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 2.719899997115135
+[09:36:08 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-6"
+    req: {
+      "method": "DELETE",
+      "url": "/boards/46372866-f73e-43b8-9211-15f2585d6a9f",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58786
+    }
+[09:36:08 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-6"
+    res: {
+      "statusCode": 204
+    }
+    responseTime: 1.4253999963402748
+[09:36:08 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-7"
+    req: {
+      "method": "POST",
+      "url": "/boards",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58787
+    }
+[09:36:08 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-7"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 1.9671999961137772
+[09:36:08 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-8"
+    req: {
+      "method": "PUT",
+      "url": "/boards/eeb2819f-3f6c-435d-88e4-79c188c628ac",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58788
+    }
+[09:36:08 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-8"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 4.841499999165535
+[09:36:08 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-9"
+    req: {
+      "method": "GET",
+      "url": "/boards/eeb2819f-3f6c-435d-88e4-79c188c628ac",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58789
+    }
+[09:36:08 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-9"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 1.5627999976277351
+[09:36:08 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-a"
+    req: {
+      "method": "DELETE",
+      "url": "/boards/eeb2819f-3f6c-435d-88e4-79c188c628ac",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58790
+    }
+[09:36:08 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-a"
+    res: {
+      "statusCode": 204
+    }
+    responseTime: 0.7636999934911728
+[09:36:08 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-b"
+    req: {
+      "method": "POST",
+      "url": "/boards",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58791
+    }
+[09:36:08 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-b"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 2.055699996650219
+[09:36:08 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-c"
+    req: {
+      "method": "DELETE",
+      "url": "/boards/0c62c10f-3d9d-4c0a-ac0c-a06f4a54add6",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58792
+    }
+[09:36:08 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-c"
+    res: {
+      "statusCode": 204
+    }
+    responseTime: 1.0904000028967857
+[09:36:08 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-d"
+    req: {
+      "method": "GET",
+      "url": "/boards/0c62c10f-3d9d-4c0a-ac0c-a06f4a54add6",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58793
+    }
+[09:36:08 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-d"
+    res: {
+      "statusCode": 404
+    }
+    responseTime: 3.513900004327297
+[09:36:08 UTC] [33mWARN[39m: [36mReply already sent[39m
+    reqId: "req-d"
+    err: {
+      "type": "FastifyError",
+      "message": "Reply was already sent.",
+      "stack":
+          FastifyError: Reply was already sent.
+              at _Reply.Reply.send (C:\Users\diman\Desktop\GIT\rs\nodejs4task\nodejs2021Q4-service\node_modules\fastify\lib\reply.js:124:26)
+              at Object.<anonymous> (C:\Users\diman\Desktop\GIT\rs\nodejs4task\nodejs2021Q4-service\src\resources\boards\boards.router.ts:17:14)
+              at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      "name": "FastifyError",
+      "code": "FST_ERR_REP_ALREADY_SENT",
+      "statusCode": 500
+    }
+[09:36:08 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-e"
+    req: {
+      "method": "POST",
+      "url": "/boards",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58794
+    }
+[09:36:08 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-e"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 2.177999995648861
+[09:36:08 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-f"
+    req: {
+      "method": "POST",
+      "url": "/boards/a2b3d634-74e0-4944-9157-52fd29265590/tasks",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58795
+    }
+[09:36:08 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-f"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 3.6017000004649162
+[09:36:08 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-g"
+    req: {
+      "method": "POST",
+      "url": "/boards/a2b3d634-74e0-4944-9157-52fd29265590/tasks",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58796
+    }
+[09:36:08 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-g"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 1.7932000011205673
+[09:36:08 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-h"
+    req: {
+      "method": "POST",
+      "url": "/boards/a2b3d634-74e0-4944-9157-52fd29265590/tasks",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58797
+    }
+[09:36:08 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-h"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 3.3143999949097633
+[09:36:08 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-i"
+    req: {
+      "method": "POST",
+      "url": "/boards/a2b3d634-74e0-4944-9157-52fd29265590/tasks",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58798
+    }
+[09:36:08 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-i"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 1.8999000042676926
+[09:36:08 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-j"
+    req: {
+      "method": "POST",
+      "url": "/boards/a2b3d634-74e0-4944-9157-52fd29265590/tasks",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58799
+    }
+[09:36:08 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-j"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 1.0297000035643578
+[09:36:08 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-k"
+    req: {
+      "method": "GET",
+      "url": "/boards/a2b3d634-74e0-4944-9157-52fd29265590/tasks/e42d0d7b-8233-4df6-ab08-b39412c1d2e6",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58800
+    }
+[09:36:08 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-k"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 1.8342000022530556
+[09:36:08 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-l"
+    req: {
+      "method": "GET",
+      "url": "/boards/a2b3d634-74e0-4944-9157-52fd29265590/tasks/747b2925-1aa1-4758-98dc-dc7cd97d584a",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58801
+    }
+[09:36:08 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-l"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 1.7831999957561493
+[09:36:08 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-m"
+    req: {
+      "method": "GET",
+      "url": "/boards/a2b3d634-74e0-4944-9157-52fd29265590/tasks/eb907013-511b-4bc5-930a-c96d5031a40a",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58802
+    }
+[09:36:08 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-m"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 1.2970000058412552
+[09:36:08 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-n"
+    req: {
+      "method": "GET",
+      "url": "/boards/a2b3d634-74e0-4944-9157-52fd29265590/tasks/d51b7358-7705-4ef5-82c2-c7edfd5ce586",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58803
+    }
+[09:36:08 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-n"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 1.1444000005722046
+[09:36:08 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-o"
+    req: {
+      "method": "GET",
+      "url": "/boards/a2b3d634-74e0-4944-9157-52fd29265590/tasks/5bdd8655-fe93-4d4c-a00f-8703908e18e4",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58804
+    }
+[09:36:08 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-o"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 0.682899996638298
+[09:36:08 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-p"
+    req: {
+      "method": "DELETE",
+      "url": "/boards/a2b3d634-74e0-4944-9157-52fd29265590",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58805
+    }
+[09:36:08 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-p"
+    res: {
+      "statusCode": 204
+    }
+    responseTime: 0.9927000030875206
+[09:36:08 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-q"
+    req: {
+      "method": "GET",
+      "url": "/boards/a2b3d634-74e0-4944-9157-52fd29265590/tasks/e42d0d7b-8233-4df6-ab08-b39412c1d2e6",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58806
+    }
+[09:36:08 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-q"
+    res: {
+      "statusCode": 404
+    }
+    responseTime: 0.7591999992728233
+[09:36:08 UTC] [33mWARN[39m: [36mReply already sent[39m
+    reqId: "req-q"
+    err: {
+      "type": "FastifyError",
+      "message": "Reply was already sent.",
+      "stack":
+          FastifyError: Reply was already sent.
+              at _Reply.Reply.send (C:\Users\diman\Desktop\GIT\rs\nodejs4task\nodejs2021Q4-service\node_modules\fastify\lib\reply.js:124:26)
+              at Object.<anonymous> (C:\Users\diman\Desktop\GIT\rs\nodejs4task\nodejs2021Q4-service\src\resources\tasks\task.router.ts:22:16)
+              at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      "name": "FastifyError",
+      "code": "FST_ERR_REP_ALREADY_SENT",
+      "statusCode": 500
+    }
+[09:36:08 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-r"
+    req: {
+      "method": "GET",
+      "url": "/boards/a2b3d634-74e0-4944-9157-52fd29265590/tasks/747b2925-1aa1-4758-98dc-dc7cd97d584a",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58807
+    }
+[09:36:08 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-r"
+    res: {
+      "statusCode": 404
+    }
+    responseTime: 0.5249000042676926
+[09:36:08 UTC] [33mWARN[39m: [36mReply already sent[39m
+    reqId: "req-r"
+    err: {
+      "type": "FastifyError",
+      "message": "Reply was already sent.",
+      "stack":
+          FastifyError: Reply was already sent.
+              at _Reply.Reply.send (C:\Users\diman\Desktop\GIT\rs\nodejs4task\nodejs2021Q4-service\node_modules\fastify\lib\reply.js:124:26)
+              at Object.<anonymous> (C:\Users\diman\Desktop\GIT\rs\nodejs4task\nodejs2021Q4-service\src\resources\tasks\task.router.ts:22:16)
+              at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      "name": "FastifyError",
+      "code": "FST_ERR_REP_ALREADY_SENT",
+      "statusCode": 500
+    }
+[09:36:08 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-s"
+    req: {
+      "method": "GET",
+      "url": "/boards/a2b3d634-74e0-4944-9157-52fd29265590/tasks/eb907013-511b-4bc5-930a-c96d5031a40a",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58808
+    }
+[09:36:08 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-s"
+    res: {
+      "statusCode": 404
+    }
+    responseTime: 1.5148999989032745
+[09:36:08 UTC] [33mWARN[39m: [36mReply already sent[39m
+    reqId: "req-s"
+    err: {
+      "type": "FastifyError",
+      "message": "Reply was already sent.",
+      "stack":
+          FastifyError: Reply was already sent.
+              at _Reply.Reply.send (C:\Users\diman\Desktop\GIT\rs\nodejs4task\nodejs2021Q4-service\node_modules\fastify\lib\reply.js:124:26)
+              at Object.<anonymous> (C:\Users\diman\Desktop\GIT\rs\nodejs4task\nodejs2021Q4-service\src\resources\tasks\task.router.ts:22:16)
+              at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      "name": "FastifyError",
+      "code": "FST_ERR_REP_ALREADY_SENT",
+      "statusCode": 500
+    }
+[09:36:08 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-t"
+    req: {
+      "method": "GET",
+      "url": "/boards/a2b3d634-74e0-4944-9157-52fd29265590/tasks/d51b7358-7705-4ef5-82c2-c7edfd5ce586",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58809
+    }
+[09:36:08 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-t"
+    res: {
+      "statusCode": 404
+    }
+    responseTime: 2.212499998509884
+[09:36:08 UTC] [33mWARN[39m: [36mReply already sent[39m
+    reqId: "req-t"
+    err: {
+      "type": "FastifyError",
+      "message": "Reply was already sent.",
+      "stack":
+          FastifyError: Reply was already sent.
+              at _Reply.Reply.send (C:\Users\diman\Desktop\GIT\rs\nodejs4task\nodejs2021Q4-service\node_modules\fastify\lib\reply.js:124:26)
+              at Object.<anonymous> (C:\Users\diman\Desktop\GIT\rs\nodejs4task\nodejs2021Q4-service\src\resources\tasks\task.router.ts:22:16)
+              at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      "name": "FastifyError",
+      "code": "FST_ERR_REP_ALREADY_SENT",
+      "statusCode": 500
+    }
+[09:36:08 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-u"
+    req: {
+      "method": "GET",
+      "url": "/boards/a2b3d634-74e0-4944-9157-52fd29265590/tasks/5bdd8655-fe93-4d4c-a00f-8703908e18e4",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58810
+    }
+[09:36:08 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-u"
+    res: {
+      "statusCode": 404
+    }
+    responseTime: 0.7101999968290329
+[09:36:08 UTC] [33mWARN[39m: [36mReply already sent[39m
+    reqId: "req-u"
+    err: {
+      "type": "FastifyError",
+      "message": "Reply was already sent.",
+      "stack":
+          FastifyError: Reply was already sent.
+              at _Reply.Reply.send (C:\Users\diman\Desktop\GIT\rs\nodejs4task\nodejs2021Q4-service\node_modules\fastify\lib\reply.js:124:26)
+              at Object.<anonymous> (C:\Users\diman\Desktop\GIT\rs\nodejs4task\nodejs2021Q4-service\src\resources\tasks\task.router.ts:22:16)
+              at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      "name": "FastifyError",
+      "code": "FST_ERR_REP_ALREADY_SENT",
+      "statusCode": 500
+    }
+[09:36:08 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-v"
+    req: {
+      "method": "DELETE",
+      "url": "/boards/29e58cf1-9a91-4b19-b8da-0c61bd901e42",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58812
+    }
+[09:36:08 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-v"
+    res: {
+      "statusCode": 204
+    }
+    responseTime: 0.5021999999880791
+[09:36:09 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-w"
+    req: {
+      "method": "POST",
+      "url": "/boards",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58813
+    }
+[09:36:09 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-w"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 0.8751999959349632
+[09:36:09 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-x"
+    req: {
+      "method": "POST",
+      "url": "/boards/67e56fa6-0869-4f18-9c3b-e4d0def9f97f/tasks",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58814
+    }
+[09:36:09 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-x"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 0.8602000027894974
+[09:36:09 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-y"
+    req: {
+      "method": "GET",
+      "url": "/boards/67e56fa6-0869-4f18-9c3b-e4d0def9f97f/tasks",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58815
+    }
+[09:36:09 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-y"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 2.364199995994568
+[09:36:09 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-z"
+    req: {
+      "method": "GET",
+      "url": "/boards/67e56fa6-0869-4f18-9c3b-e4d0def9f97f/tasks",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58816
+    }
+[09:36:09 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-z"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 1.154399998486042
+[09:36:09 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-10"
+    req: {
+      "method": "GET",
+      "url": "/boards/67e56fa6-0869-4f18-9c3b-e4d0def9f97f/tasks/107ba0bb-ade9-4aff-9ac4-6b05e49c4a82",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58817
+    }
+[09:36:09 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-10"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 0.5095999985933304
+[09:36:09 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-11"
+    req: {
+      "method": "POST",
+      "url": "/boards/67e56fa6-0869-4f18-9c3b-e4d0def9f97f/tasks",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58818
+    }
+[09:36:09 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-11"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 1.440700002014637
+[09:36:09 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-12"
+    req: {
+      "method": "DELETE",
+      "url": "/boards/67e56fa6-0869-4f18-9c3b-e4d0def9f97f/tasks/67934cc9-cde9-45d3-952b-5210e74a1552",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58819
+    }
+[09:36:09 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-12"
+    res: {
+      "statusCode": 204
+    }
+    responseTime: 0.9349000006914139
+[09:36:09 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-13"
+    req: {
+      "method": "POST",
+      "url": "/boards/67e56fa6-0869-4f18-9c3b-e4d0def9f97f/tasks",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58820
+    }
+[09:36:09 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-13"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 1.6942999958992004
+[09:36:09 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-14"
+    req: {
+      "method": "PUT",
+      "url": "/boards/67e56fa6-0869-4f18-9c3b-e4d0def9f97f/tasks/73fe4c40-0646-4d71-ac16-dc60064c23b7",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58821
+    }
+[09:36:09 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-14"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 2.322300001978874
+[09:36:09 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-15"
+    req: {
+      "method": "GET",
+      "url": "/boards/67e56fa6-0869-4f18-9c3b-e4d0def9f97f/tasks/73fe4c40-0646-4d71-ac16-dc60064c23b7",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58822
+    }
+[09:36:09 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-15"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 0.35579999536275864
+[09:36:09 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-16"
+    req: {
+      "method": "GET",
+      "url": "/boards/67e56fa6-0869-4f18-9c3b-e4d0def9f97f/tasks/107ba0bb-ade9-4aff-9ac4-6b05e49c4a82",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58823
+    }
+[09:36:09 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-16"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 0.7149000018835068
+[09:36:09 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-17"
+    req: {
+      "method": "DELETE",
+      "url": "/boards/67e56fa6-0869-4f18-9c3b-e4d0def9f97f/tasks/107ba0bb-ade9-4aff-9ac4-6b05e49c4a82",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58824
+    }
+[09:36:09 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-17"
+    res: {
+      "statusCode": 204
+    }
+    responseTime: 0.5681999996304512
+[09:36:09 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-18"
+    req: {
+      "method": "GET",
+      "url": "/boards/67e56fa6-0869-4f18-9c3b-e4d0def9f97f/tasks/107ba0bb-ade9-4aff-9ac4-6b05e49c4a82",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58825
+    }
+[09:36:09 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-18"
+    res: {
+      "statusCode": 404
+    }
+    responseTime: 0.4592000022530556
+[09:36:09 UTC] [33mWARN[39m: [36mReply already sent[39m
+    reqId: "req-18"
+    err: {
+      "type": "FastifyError",
+      "message": "Reply was already sent.",
+      "stack":
+          FastifyError: Reply was already sent.
+              at _Reply.Reply.send (C:\Users\diman\Desktop\GIT\rs\nodejs4task\nodejs2021Q4-service\node_modules\fastify\lib\reply.js:124:26)
+              at Object.<anonymous> (C:\Users\diman\Desktop\GIT\rs\nodejs4task\nodejs2021Q4-service\src\resources\tasks\task.router.ts:22:16)
+              at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      "name": "FastifyError",
+      "code": "FST_ERR_REP_ALREADY_SENT",
+      "statusCode": 500
+    }
+[09:36:09 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-19"
+    req: {
+      "method": "DELETE",
+      "url": "/boards/67e56fa6-0869-4f18-9c3b-e4d0def9f97f",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58826
+    }
+[09:36:09 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-19"
+    res: {
+      "statusCode": 204
+    }
+    responseTime: 0.750900000333786
+[09:36:18 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-1a"
+    req: {
+      "method": "GET",
+      "url": "/users",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58828
+    }
+[09:36:18 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-1a"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 1.0768999978899956
+[09:36:18 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-1b"
+    req: {
+      "method": "POST",
+      "url": "/users",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58829
+    }
+[09:36:18 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-1b"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 3.3524999991059303
+[09:36:18 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-1c"
+    req: {
+      "method": "GET",
+      "url": "/users/2eba7187-b911-4574-97bb-eecdf19aaad4",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58830
+    }
+[09:36:18 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-1c"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 1.2697999998927116
+[09:36:18 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-1d"
+    req: {
+      "method": "DELETE",
+      "url": "/users/2eba7187-b911-4574-97bb-eecdf19aaad4",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58831
+    }
+[09:36:18 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-1d"
+    res: {
+      "statusCode": 204
+    }
+    responseTime: 0.9526999965310097
+[09:36:18 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-1e"
+    req: {
+      "method": "POST",
+      "url": "/users",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58832
+    }
+[09:36:18 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-1e"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 1.3319000005722046
+[09:36:18 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-1f"
+    req: {
+      "method": "DELETE",
+      "url": "/users/883853d6-0870-47f4-adb1-e11be5661527",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58833
+    }
+[09:36:18 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-1f"
+    res: {
+      "statusCode": 204
+    }
+    responseTime: 0.4447000026702881
+[09:36:18 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-1g"
+    req: {
+      "method": "POST",
+      "url": "/users",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58834
+    }
+[09:36:18 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-1g"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 0.5795999988913536
+[09:36:18 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-1h"
+    req: {
+      "method": "PUT",
+      "url": "/users/f13630f7-46b5-4463-b3a0-0a0826c2709c",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58835
+    }
+[09:36:18 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-1h"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 0.9396000057458878
+[09:36:18 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-1i"
+    req: {
+      "method": "GET",
+      "url": "/users/f13630f7-46b5-4463-b3a0-0a0826c2709c",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58836
+    }
+[09:36:18 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-1i"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 0.679799996316433
+[09:36:18 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-1j"
+    req: {
+      "method": "DELETE",
+      "url": "/users/f13630f7-46b5-4463-b3a0-0a0826c2709c",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58837
+    }
+[09:36:18 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-1j"
+    res: {
+      "statusCode": 204
+    }
+    responseTime: 0.4795999974012375
+[09:36:18 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-1k"
+    req: {
+      "method": "POST",
+      "url": "/users",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58838
+    }
+[09:36:18 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-1k"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 1.056499995291233
+[09:36:18 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-1l"
+    req: {
+      "method": "DELETE",
+      "url": "/users/ee2352f5-43a7-4256-8d95-fbfee119df3f",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58839
+    }
+[09:36:18 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-1l"
+    res: {
+      "statusCode": 204
+    }
+    responseTime: 0.6061000004410744
+[09:36:18 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-1m"
+    req: {
+      "method": "POST",
+      "url": "/users",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58840
+    }
+[09:36:18 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-1m"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 0.5718000009655952
+[09:36:18 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-1n"
+    req: {
+      "method": "POST",
+      "url": "/boards",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58841
+    }
+[09:36:18 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-1n"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 1.6970999985933304
+[09:36:18 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-1o"
+    req: {
+      "method": "POST",
+      "url": "/boards/66fc7f56-3d05-4e1e-8f4a-3e1139f42476/tasks",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58842
+    }
+[09:36:18 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-1o"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 0.9448999986052513
+[09:36:18 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-1p"
+    req: {
+      "method": "POST",
+      "url": "/boards/66fc7f56-3d05-4e1e-8f4a-3e1139f42476/tasks",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58843
+    }
+[09:36:18 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-1p"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 1.3342000022530556
+[09:36:18 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-1q"
+    req: {
+      "method": "DELETE",
+      "url": "/users/a735005e-88ff-425b-8e3f-37c58a00eb6e",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58844
+    }
+[09:36:18 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-1q"
+    res: {
+      "statusCode": 204
+    }
+    responseTime: 0.590999998152256
+[09:36:18 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-1r"
+    req: {
+      "method": "GET",
+      "url": "/boards/66fc7f56-3d05-4e1e-8f4a-3e1139f42476/tasks/5a148232-965b-42cb-821d-85961fd360b3",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58845
+    }
+[09:36:18 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-1r"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 0.5628000050783157
+[09:36:18 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-1s"
+    req: {
+      "method": "GET",
+      "url": "/boards/66fc7f56-3d05-4e1e-8f4a-3e1139f42476/tasks/7b11c399-d070-484c-842f-64dda875dd2f",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58846
+    }
+[09:36:18 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-1s"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 0.4652999937534332
+[09:36:18 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-1t"
+    req: {
+      "method": "DELETE",
+      "url": "/boards/66fc7f56-3d05-4e1e-8f4a-3e1139f42476/tasks/5a148232-965b-42cb-821d-85961fd360b3",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58847
+    }
+[09:36:18 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-1t"
+    res: {
+      "statusCode": 204
+    }
+    responseTime: 0.5061000064015388
+[09:36:18 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-1u"
+    req: {
+      "method": "DELETE",
+      "url": "/boards/66fc7f56-3d05-4e1e-8f4a-3e1139f42476/tasks/7b11c399-d070-484c-842f-64dda875dd2f",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58848
+    }
+[09:36:18 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-1u"
+    res: {
+      "statusCode": 204
+    }
+    responseTime: 0.5263999998569489
+[09:36:18 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-1v"
+    req: {
+      "method": "DELETE",
+      "url": "/boards/66fc7f56-3d05-4e1e-8f4a-3e1139f42476",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58849
+    }
+[09:36:18 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-1v"
+    res: {
+      "statusCode": 204
+    }
+    responseTime: 0.41520000249147415
+[09:36:19 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-1w"
+    req: {
+      "method": "POST",
+      "url": "/boards",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58850
+    }
+[09:36:19 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-1w"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 0.9921000003814697
+[09:36:19 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-1x"
+    req: {
+      "method": "GET",
+      "url": "/boards",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58851
+    }
+[09:36:19 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-1x"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 1.033500000834465
+[09:36:19 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-1y"
+    req: {
+      "method": "GET",
+      "url": "/boards",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58852
+    }
+[09:36:19 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-1y"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 0.4796999990940094
+[09:36:19 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-1z"
+    req: {
+      "method": "GET",
+      "url": "/boards/f5bfa853-aa48-438e-a1a6-385b2c882256",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58853
+    }
+[09:36:19 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-1z"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 0.5034000054001808
+[09:36:19 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-20"
+    req: {
+      "method": "POST",
+      "url": "/boards",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58854
+    }
+[09:36:19 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-20"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 0.9083999991416931
+[09:36:19 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-21"
+    req: {
+      "method": "DELETE",
+      "url": "/boards/e1f8ee94-7983-4b31-883d-f3a44d3c52f7",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58855
+    }
+[09:36:19 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-21"
+    res: {
+      "statusCode": 204
+    }
+    responseTime: 0.3788999989628792
+[09:36:19 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-22"
+    req: {
+      "method": "POST",
+      "url": "/boards",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58856
+    }
+[09:36:19 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-22"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 1.686200000345707
+[09:36:19 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-23"
+    req: {
+      "method": "PUT",
+      "url": "/boards/393dd020-833e-429e-aacd-3c0ae017ac91",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58857
+    }
+[09:36:19 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-23"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 0.7062000036239624
+[09:36:19 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-24"
+    req: {
+      "method": "GET",
+      "url": "/boards/393dd020-833e-429e-aacd-3c0ae017ac91",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58858
+    }
+[09:36:19 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-24"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 0.5033000037074089
+[09:36:19 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-25"
+    req: {
+      "method": "DELETE",
+      "url": "/boards/393dd020-833e-429e-aacd-3c0ae017ac91",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58859
+    }
+[09:36:19 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-25"
+    res: {
+      "statusCode": 204
+    }
+    responseTime: 0.5215000063180923
+[09:36:19 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-26"
+    req: {
+      "method": "POST",
+      "url": "/boards",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58860
+    }
+[09:36:19 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-26"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 0.9701999947428703
+[09:36:19 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-27"
+    req: {
+      "method": "DELETE",
+      "url": "/boards/080e80f2-4869-4ef4-846b-c658aacde303",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58861
+    }
+[09:36:19 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-27"
+    res: {
+      "statusCode": 204
+    }
+    responseTime: 0.5709000006318092
+[09:36:19 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-28"
+    req: {
+      "method": "GET",
+      "url": "/boards/080e80f2-4869-4ef4-846b-c658aacde303",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58862
+    }
+[09:36:19 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-28"
+    res: {
+      "statusCode": 404
+    }
+    responseTime: 0.5625
+[09:36:19 UTC] [33mWARN[39m: [36mReply already sent[39m
+    reqId: "req-28"
+    err: {
+      "type": "FastifyError",
+      "message": "Reply was already sent.",
+      "stack":
+          FastifyError: Reply was already sent.
+              at _Reply.Reply.send (C:\Users\diman\Desktop\GIT\rs\nodejs4task\nodejs2021Q4-service\node_modules\fastify\lib\reply.js:124:26)
+              at Object.<anonymous> (C:\Users\diman\Desktop\GIT\rs\nodejs4task\nodejs2021Q4-service\src\resources\boards\boards.router.ts:17:14)
+              at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      "name": "FastifyError",
+      "code": "FST_ERR_REP_ALREADY_SENT",
+      "statusCode": 500
+    }
+[09:36:19 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-29"
+    req: {
+      "method": "POST",
+      "url": "/boards",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58863
+    }
+[09:36:19 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-29"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 1.3829999938607216
+[09:36:19 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-2a"
+    req: {
+      "method": "POST",
+      "url": "/boards/22bc5f19-eb41-47ac-8684-05fa5468622b/tasks",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58864
+    }
+[09:36:19 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-2a"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 0.8721000030636787
+[09:36:19 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-2b"
+    req: {
+      "method": "POST",
+      "url": "/boards/22bc5f19-eb41-47ac-8684-05fa5468622b/tasks",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58865
+    }
+[09:36:19 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-2b"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 0.7923000007867813
+[09:36:19 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-2c"
+    req: {
+      "method": "POST",
+      "url": "/boards/22bc5f19-eb41-47ac-8684-05fa5468622b/tasks",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58866
+    }
+[09:36:19 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-2c"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 0.7443000003695488
+[09:36:19 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-2d"
+    req: {
+      "method": "POST",
+      "url": "/boards/22bc5f19-eb41-47ac-8684-05fa5468622b/tasks",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58867
+    }
+[09:36:19 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-2d"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 0.7083999961614609
+[09:36:19 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-2e"
+    req: {
+      "method": "POST",
+      "url": "/boards/22bc5f19-eb41-47ac-8684-05fa5468622b/tasks",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58868
+    }
+[09:36:19 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-2e"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 0.6496999934315681
+[09:36:19 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-2f"
+    req: {
+      "method": "GET",
+      "url": "/boards/22bc5f19-eb41-47ac-8684-05fa5468622b/tasks/fcec3fbb-eede-482e-adc3-1a93ee53f31e",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58869
+    }
+[09:36:19 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-2f"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 0.6027000024914742
+[09:36:19 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-2g"
+    req: {
+      "method": "GET",
+      "url": "/boards/22bc5f19-eb41-47ac-8684-05fa5468622b/tasks/c9013678-c9a0-4404-957a-560024834009",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58870
+    }
+[09:36:19 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-2g"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 0.5117999985814095
+[09:36:19 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-2h"
+    req: {
+      "method": "GET",
+      "url": "/boards/22bc5f19-eb41-47ac-8684-05fa5468622b/tasks/75ba19c5-d9fa-4c02-8f51-36e16c2797c3",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58871
+    }
+[09:36:19 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-2h"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 0.46289999783039093
+[09:36:19 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-2i"
+    req: {
+      "method": "GET",
+      "url": "/boards/22bc5f19-eb41-47ac-8684-05fa5468622b/tasks/d5ee6045-d842-4861-9481-16fb2447b260",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58872
+    }
+[09:36:19 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-2i"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 0.4456000030040741
+[09:36:19 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-2j"
+    req: {
+      "method": "GET",
+      "url": "/boards/22bc5f19-eb41-47ac-8684-05fa5468622b/tasks/de2a5beb-067b-4f8f-a4b4-6d4795a29999",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58873
+    }
+[09:36:19 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-2j"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 0.4473000019788742
+[09:36:19 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-2k"
+    req: {
+      "method": "DELETE",
+      "url": "/boards/22bc5f19-eb41-47ac-8684-05fa5468622b",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58874
+    }
+[09:36:19 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-2k"
+    res: {
+      "statusCode": 204
+    }
+    responseTime: 0.5102999955415726
+[09:36:19 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-2l"
+    req: {
+      "method": "GET",
+      "url": "/boards/22bc5f19-eb41-47ac-8684-05fa5468622b/tasks/fcec3fbb-eede-482e-adc3-1a93ee53f31e",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58875
+    }
+[09:36:19 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-2l"
+    res: {
+      "statusCode": 404
+    }
+    responseTime: 0.5658000037074089
+[09:36:19 UTC] [33mWARN[39m: [36mReply already sent[39m
+    reqId: "req-2l"
+    err: {
+      "type": "FastifyError",
+      "message": "Reply was already sent.",
+      "stack":
+          FastifyError: Reply was already sent.
+              at _Reply.Reply.send (C:\Users\diman\Desktop\GIT\rs\nodejs4task\nodejs2021Q4-service\node_modules\fastify\lib\reply.js:124:26)
+              at Object.<anonymous> (C:\Users\diman\Desktop\GIT\rs\nodejs4task\nodejs2021Q4-service\src\resources\tasks\task.router.ts:22:16)
+              at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      "name": "FastifyError",
+      "code": "FST_ERR_REP_ALREADY_SENT",
+      "statusCode": 500
+    }
+[09:36:19 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-2m"
+    req: {
+      "method": "GET",
+      "url": "/boards/22bc5f19-eb41-47ac-8684-05fa5468622b/tasks/75ba19c5-d9fa-4c02-8f51-36e16c2797c3",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58876
+    }
+[09:36:19 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-2m"
+    res: {
+      "statusCode": 404
+    }
+    responseTime: 0.5174999982118607
+[09:36:19 UTC] [33mWARN[39m: [36mReply already sent[39m
+    reqId: "req-2m"
+    err: {
+      "type": "FastifyError",
+      "message": "Reply was already sent.",
+      "stack":
+          FastifyError: Reply was already sent.
+              at _Reply.Reply.send (C:\Users\diman\Desktop\GIT\rs\nodejs4task\nodejs2021Q4-service\node_modules\fastify\lib\reply.js:124:26)
+              at Object.<anonymous> (C:\Users\diman\Desktop\GIT\rs\nodejs4task\nodejs2021Q4-service\src\resources\tasks\task.router.ts:22:16)
+              at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      "name": "FastifyError",
+      "code": "FST_ERR_REP_ALREADY_SENT",
+      "statusCode": 500
+    }
+[09:36:19 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-2n"
+    req: {
+      "method": "GET",
+      "url": "/boards/22bc5f19-eb41-47ac-8684-05fa5468622b/tasks/c9013678-c9a0-4404-957a-560024834009",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58877
+    }
+[09:36:19 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-2n"
+    res: {
+      "statusCode": 404
+    }
+    responseTime: 1.3715000003576279
+[09:36:19 UTC] [33mWARN[39m: [36mReply already sent[39m
+    reqId: "req-2n"
+    err: {
+      "type": "FastifyError",
+      "message": "Reply was already sent.",
+      "stack":
+          FastifyError: Reply was already sent.
+              at _Reply.Reply.send (C:\Users\diman\Desktop\GIT\rs\nodejs4task\nodejs2021Q4-service\node_modules\fastify\lib\reply.js:124:26)
+              at Object.<anonymous> (C:\Users\diman\Desktop\GIT\rs\nodejs4task\nodejs2021Q4-service\src\resources\tasks\task.router.ts:22:16)
+              at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      "name": "FastifyError",
+      "code": "FST_ERR_REP_ALREADY_SENT",
+      "statusCode": 500
+    }
+[09:36:19 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-2o"
+    req: {
+      "method": "GET",
+      "url": "/boards/22bc5f19-eb41-47ac-8684-05fa5468622b/tasks/de2a5beb-067b-4f8f-a4b4-6d4795a29999",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58878
+    }
+[09:36:19 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-2o"
+    res: {
+      "statusCode": 404
+    }
+    responseTime: 0.8774000033736229
+[09:36:19 UTC] [33mWARN[39m: [36mReply already sent[39m
+    reqId: "req-2o"
+    err: {
+      "type": "FastifyError",
+      "message": "Reply was already sent.",
+      "stack":
+          FastifyError: Reply was already sent.
+              at _Reply.Reply.send (C:\Users\diman\Desktop\GIT\rs\nodejs4task\nodejs2021Q4-service\node_modules\fastify\lib\reply.js:124:26)
+              at Object.<anonymous> (C:\Users\diman\Desktop\GIT\rs\nodejs4task\nodejs2021Q4-service\src\resources\tasks\task.router.ts:22:16)
+              at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      "name": "FastifyError",
+      "code": "FST_ERR_REP_ALREADY_SENT",
+      "statusCode": 500
+    }
+[09:36:19 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-2p"
+    req: {
+      "method": "GET",
+      "url": "/boards/22bc5f19-eb41-47ac-8684-05fa5468622b/tasks/d5ee6045-d842-4861-9481-16fb2447b260",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58879
+    }
+[09:36:19 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-2p"
+    res: {
+      "statusCode": 404
+    }
+    responseTime: 0.5164999961853027
+[09:36:19 UTC] [33mWARN[39m: [36mReply already sent[39m
+    reqId: "req-2p"
+    err: {
+      "type": "FastifyError",
+      "message": "Reply was already sent.",
+      "stack":
+          FastifyError: Reply was already sent.
+              at _Reply.Reply.send (C:\Users\diman\Desktop\GIT\rs\nodejs4task\nodejs2021Q4-service\node_modules\fastify\lib\reply.js:124:26)
+              at Object.<anonymous> (C:\Users\diman\Desktop\GIT\rs\nodejs4task\nodejs2021Q4-service\src\resources\tasks\task.router.ts:22:16)
+              at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      "name": "FastifyError",
+      "code": "FST_ERR_REP_ALREADY_SENT",
+      "statusCode": 500
+    }
+[09:36:19 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-2q"
+    req: {
+      "method": "DELETE",
+      "url": "/boards/f5bfa853-aa48-438e-a1a6-385b2c882256",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58880
+    }
+[09:36:19 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-2q"
+    res: {
+      "statusCode": 204
+    }
+    responseTime: 0.442500002682209
+[09:36:20 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-2r"
+    req: {
+      "method": "POST",
+      "url": "/boards",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58881
+    }
+[09:36:20 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-2r"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 0.5878999978303909
+[09:36:20 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-2s"
+    req: {
+      "method": "POST",
+      "url": "/boards/9c47eff4-70c6-432a-a862-0da2c834b0f1/tasks",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58882
+    }
+[09:36:20 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-2s"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 0.6180000007152557
+[09:36:20 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-2t"
+    req: {
+      "method": "GET",
+      "url": "/boards/9c47eff4-70c6-432a-a862-0da2c834b0f1/tasks",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58883
+    }
+[09:36:20 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-2t"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 0.588299997150898
+[09:36:20 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-2u"
+    req: {
+      "method": "GET",
+      "url": "/boards/9c47eff4-70c6-432a-a862-0da2c834b0f1/tasks",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58884
+    }
+[09:36:20 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-2u"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 0.4478999972343445
+[09:36:20 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-2v"
+    req: {
+      "method": "GET",
+      "url": "/boards/9c47eff4-70c6-432a-a862-0da2c834b0f1/tasks/66713b97-2c62-40e8-b560-004b42d71ef8",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58885
+    }
+[09:36:20 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-2v"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 0.5237000063061714
+[09:36:20 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-2w"
+    req: {
+      "method": "POST",
+      "url": "/boards/9c47eff4-70c6-432a-a862-0da2c834b0f1/tasks",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58886
+    }
+[09:36:20 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-2w"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 0.5776999965310097
+[09:36:20 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-2x"
+    req: {
+      "method": "DELETE",
+      "url": "/boards/9c47eff4-70c6-432a-a862-0da2c834b0f1/tasks/99058ff6-d1ef-4b4a-9ff3-061be6eafc72",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58887
+    }
+[09:36:20 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-2x"
+    res: {
+      "statusCode": 204
+    }
+    responseTime: 0.4618000015616417
+[09:36:20 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-2y"
+    req: {
+      "method": "POST",
+      "url": "/boards/9c47eff4-70c6-432a-a862-0da2c834b0f1/tasks",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58888
+    }
+[09:36:20 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-2y"
+    res: {
+      "statusCode": 201
+    }
+    responseTime: 0.8593000024557114
+[09:36:20 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-2z"
+    req: {
+      "method": "PUT",
+      "url": "/boards/9c47eff4-70c6-432a-a862-0da2c834b0f1/tasks/c375ff18-2cb8-48d0-b5cb-ff7d79a1a2a7",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58889
+    }
+[09:36:20 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-2z"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 1.3511999994516373
+[09:36:20 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-30"
+    req: {
+      "method": "GET",
+      "url": "/boards/9c47eff4-70c6-432a-a862-0da2c834b0f1/tasks/c375ff18-2cb8-48d0-b5cb-ff7d79a1a2a7",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58890
+    }
+[09:36:20 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-30"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 0.3597000017762184
+[09:36:20 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-31"
+    req: {
+      "method": "GET",
+      "url": "/boards/9c47eff4-70c6-432a-a862-0da2c834b0f1/tasks/66713b97-2c62-40e8-b560-004b42d71ef8",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58891
+    }
+[09:36:20 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-31"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 0.5231999978423119
+[09:36:20 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-32"
+    req: {
+      "method": "DELETE",
+      "url": "/boards/9c47eff4-70c6-432a-a862-0da2c834b0f1/tasks/66713b97-2c62-40e8-b560-004b42d71ef8",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58892
+    }
+[09:36:20 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-32"
+    res: {
+      "statusCode": 204
+    }
+    responseTime: 0.6146000027656555
+[09:36:20 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-33"
+    req: {
+      "method": "GET",
+      "url": "/boards/9c47eff4-70c6-432a-a862-0da2c834b0f1/tasks/66713b97-2c62-40e8-b560-004b42d71ef8",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58893
+    }
+[09:36:20 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-33"
+    res: {
+      "statusCode": 404
+    }
+    responseTime: 0.3813999965786934
+[09:36:20 UTC] [33mWARN[39m: [36mReply already sent[39m
+    reqId: "req-33"
+    err: {
+      "type": "FastifyError",
+      "message": "Reply was already sent.",
+      "stack":
+          FastifyError: Reply was already sent.
+              at _Reply.Reply.send (C:\Users\diman\Desktop\GIT\rs\nodejs4task\nodejs2021Q4-service\node_modules\fastify\lib\reply.js:124:26)
+              at Object.<anonymous> (C:\Users\diman\Desktop\GIT\rs\nodejs4task\nodejs2021Q4-service\src\resources\tasks\task.router.ts:22:16)
+              at processTicksAndRejections (node:internal/process/task_queues:96:5)
+      "name": "FastifyError",
+      "code": "FST_ERR_REP_ALREADY_SENT",
+      "statusCode": 500
+    }
+[09:36:20 UTC] [32mINFO[39m: [36mincoming request[39m
+    reqId: "req-34"
+    req: {
+      "method": "DELETE",
+      "url": "/boards/9c47eff4-70c6-432a-a862-0da2c834b0f1",
+      "hostname": "localhost:4000",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 58894
+    }
+[09:36:20 UTC] [32mINFO[39m: [36mrequest completed[39m
+    reqId: "req-34"
+    res: {
+      "statusCode": 204
+    }
+    responseTime: 0.346000000834465
+[09:44:47 UTC] [32mINFO[39m: [36mServer listening at http://127.0.0.1:4000[39m
+[09:46:56 UTC] [32mINFO[39m: [36mServer listening at http://127.0.0.1:4000[39m
+[09:48:14 UTC] [32mINFO[39m: [36mServer listening at http://127.0.0.1:4000[39m
+[09:50:18 UTC] [32mINFO[39m: [36mServer listening at http://127.0.0.1:4000[39m
+[09:51:46 UTC] [32mINFO[39m: [36mServer listening at http://127.0.0.1:4000[39m
+[09:52:26 UTC] [32mINFO[39m: [36mServer listening at http://127.0.0.1:4000[39m
+[09:58:02 UTC] [32mINFO[39m: [36mServer listening at http://127.0.0.1:4000[39m
+[09:58:02 UTC] [31mERROR[39m: [36mlisten EADDRINUSE: address already in use 127.0.0.1:4000[39m
+    err: {
+      "type": "Error",
+      "message": "listen EADDRINUSE: address already in use 127.0.0.1:4000",
+      "stack":
+          Error: listen EADDRINUSE: address already in use 127.0.0.1:4000
+              at Server.setupListenHandle [as _listen2] (node:net:1334:16)
+              at listenInCluster (node:net:1382:12)
+              at GetAddrInfoReqWrap.doListen (node:net:1520:7)
+              at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:73:8)
+      "code": "EADDRINUSE",
+      "errno": -4091,
+      "syscall": "listen",
+      "address": "127.0.0.1",
+      "port": 4000
+    }
+[09:58:33 UTC] [32mINFO[39m: [36mServer listening at http://127.0.0.1:4000[39m
+[09:59:27 UTC] [32mINFO[39m: [36mServer listening at http://127.0.0.1:4000[39m
+[10:01:02 UTC] [32mINFO[39m: [36mServer listening at http://127.0.0.1:4000[39m
+[10:03:56 UTC] [32mINFO[39m: [36mServer listening at http://127.0.0.1:4000[39m
+[10:04:16 UTC] [32mINFO[39m: [36mServer listening at http://127.0.0.1:4000[39m
+[10:08:53 UTC] [32mINFO[39m: [36mServer listening at http://127.0.0.1:4000[39m
+[10:28:27 UTC] [32mINFO[39m: [36mServer listening at http://127.0.0.1:4000[39m
+[11:53:06 UTC] [32mINFO[39m: [36mServer listening at http://127.0.0.1:4000[39m
+[12:03:35 UTC] [32mINFO[39m: [36mServer listening at http://127.0.0.1:4000[39m
+[13:02:31 UTC] [32mINFO[39m: [36mServer listening at http://127.0.0.1:4000[39m
+[13:11:14 UTC] [32mINFO[39m: [36mServer listening at http://127.0.0.1:4000[39m
+[13:12:43 UTC] [32mINFO[39m: [36mServer listening at http://127.0.0.1:4000[39m
+[13:32:50 UTC] [32mINFO[39m: [36mServer listening at http://127.0.0.1:4000[39m
+[13:33:36 UTC] [32mINFO[39m: [36mServer listening at http://127.0.0.1:4000[39m
+[13:35:44 UTC] [32mINFO[39m: [36mServer listening at http://127.0.0.1:4000[39m
+[13:36:33 UTC] [32mINFO[39m: [36mServer listening at http://127.0.0.1:4000[39m
+[13:37:57 UTC] [32mINFO[39m: [36mServer listening at http://127.0.0.1:4000[39m
+[13:38:27 UTC] [32mINFO[39m: [36mServer listening at http://127.0.0.1:4000[39m
+[13:42:40 UTC] [32mINFO[39m: [36mServer listening at http://127.0.0.1:4000[39m
+[13:43:21 UTC] [32mINFO[39m: [36mServer listening at http://127.0.0.1:4000[39m
+[13:45:50 UTC] [32mINFO[39m: [36mServer listening at http://127.0.0.1:4000[39m
+[13:46:16 UTC] [32mINFO[39m: [36mServer listening at http://127.0.0.1:4000[39m

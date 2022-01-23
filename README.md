@@ -1,72 +1,46 @@
-# RS School REST service
-
-## Prerequisites
-
-- Git - [Download & Install Git](https://git-scm.com/downloads).
-- Node.js - [Download & Install Node.js](https://nodejs.org/en/download/) and the npm package manager.
+# RS School REST service With Docker
 
 ## Downloading
 
-```
-git clone {repository URL}
-```
-
-## Installing NPM modules
+clone repo
 
 ```
-npm install
+git clone https://github.com/excluz1v/nodejs2021Q4-service.git
 ```
 
-## Running application
+switch branch
 
 ```
-npm start
+git checkout authentication
 ```
 
-After starting the app on port (4000 as default) you can open
-in your browser OpenAPI documentation by typing http://localhost:4000/doc/.
-For more information about OpenAPI/Swagger please visit https://swagger.io/.
+## Deploy
 
-## Testing
 
-After application running open new terminal and enter:
-
-To run all tests without authorization
+start application
 
 ```
-npm test
+docker-compose up --build
 ```
 
-To run only one of all test suites (users, boards or tasks)
+wait for container is build
 
-```
-npm test <suite name>
-```
+## Run tests
 
-To run all test with authorization
+open new console
 
 ```
 npm run test:auth
 ```
 
-To run only specific test suite with authorization (users, boards or tasks)
+stop application
 
 ```
-npm run test:auth <suite name>
+docker-compose down
 ```
 
-## Development
+## Prerequisites
 
-If you're using VSCode, you can get a better developer experience from integration with [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) and [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) extensions.
-
-### Auto-fix and format
-
-```
-npm run lint
-```
-
-### Debugging in VSCode
-
-Press <kbd>F5</kbd> to debug.
-
-For more information, visit: https://code.visualstudio.com/docs/editor/debugging
+- Git - [Download & Install Git](https://git-scm.com/downloads).
+- Node.js - [Download & Install Node.js](https://nodejs.org/en/download/) and the npm package manager.
+- Docker -[Download & Install Docker](https://www.docker.com/get-started)
