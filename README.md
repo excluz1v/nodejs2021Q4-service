@@ -16,11 +16,6 @@ git checkout authentication
 
 ## Deploy
 
-install packages
-
-```
-npm i
-```
 
 start application
 
