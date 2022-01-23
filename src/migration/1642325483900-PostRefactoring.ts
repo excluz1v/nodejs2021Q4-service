@@ -41,12 +41,12 @@ export class PostRefactoring1642325483900 implements MigrationInterface {
       "id" character varying NOT NULL,
       "name" character varying(50) NOT NULL, 
       "login" character varying(50) NOT NULL, 
-      "password" text NOT NULL, 
+      "password" character varying NOT NULL, 
       CONSTRAINT "PK_cace4a159ff9f2512dd42373760" PRIMARY KEY ("id"))`
     );
     // creating admin
     const adminPasswordWithHash: string = bcrypt.hashSync('admin', 10)
-    await queryRunner.query(`INSERT INTO "user" (name, login, password) VALUES ('admin', 'admin', ${adminPasswordWithHash});`)
+    await queryRunner.query(`INSERT INTO "user" (name, login, password, id) VALUES ('admin', 'admin', '${adminPasswordWithHash}', '1');`)
     await queryRunner.query(
       `CREATE TABLE "task" (
       "id" character varying NOT NULL,

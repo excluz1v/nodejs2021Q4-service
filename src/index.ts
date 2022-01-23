@@ -60,10 +60,10 @@ const start = async () => {
       },
       exposeRoute: true,
     });
-    // if (config.AUTH_MODE) {
-    //   await server.register(authPlugin);
-    //   await server.register(AuthRouter);
-    // }
+    if (config.AUTH_MODE) {
+      await server.register(authPlugin);
+      await server.register(AuthRouter);
+    }
     await server.register(userRoutes);
     await server.register(boardRoutes);
     await server.register(taskRoutes);

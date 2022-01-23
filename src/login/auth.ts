@@ -1,7 +1,7 @@
 import { FastifyInstance, FastifyReply, FastifyRequest } from "fastify";
 import fp from 'fastify-plugin'
 import jwt from 'jsonwebtoken'
-import { config } from "src/common/config";
+import { config } from "../common/config";
 
 const opensUrls = ['/login', '/doc']
 

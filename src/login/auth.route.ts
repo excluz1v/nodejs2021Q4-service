@@ -1,4 +1,6 @@
 import { FastifyInstance } from "fastify";
+import User from "../resources/users/user.model";
+import { loginBodyType } from "src/ts/types";
 
 // Options for Login user
 const loginUserOpts = {
@@ -23,9 +25,10 @@ const loginUserOpts = {
 };
 
 export default async function AuthRouter(fastify: FastifyInstance) {
-  fastify.post('/login', loginUserOpts, async (req, res) => {
+  fastify.post<loginBodyType>('/login', loginUserOpts, async (req, res) => {
     try {
-      // const { login, password } = req.body;
+      const { login, password } = req.body;
+      return User.login(login, password)
       // const credentials = await checkPassword(login, password);
       // if (credentials) {
       // const token = fastify.jwt.sign(
