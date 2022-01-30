@@ -3,6 +3,11 @@ services:
   node:
     build: .
     command: npm run start:dev
+    volumes:
+      # - type: bind
+      #   source: ./src/server.ts
+      #   target: /docker/src/server.ts
+      - ./src:/docker/src
     ports:
       - ${PORT}:${PORT}
     depends_on:

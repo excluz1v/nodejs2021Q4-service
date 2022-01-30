@@ -2,7 +2,7 @@
   "name": "rsschool",
   "version": "0.0.1",
   "description": "",
-  "author": "",
+  "author": "excluz1v",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "@nestjs/common": "^8.0.0",
+    "@nestjs/config": "^1.1.6",
     "@nestjs/core": "^8.0.0",
     "@nestjs/platform-express": "^8.0.0",
     "@nestjs/sequelize": "^8.0.0",
@@ -31,6 +32,7 @@
     "cross-env": "^7.0.3",
     "dotenv": "^14.3.2",
     "jsonwebtoken": "^8.5.1",
+    "path": "^0.12.7",
     "pg": "^8.7.1",
     "pg-hstore": "^2.3.4",
     "reflect-metadata": "^0.1.13",

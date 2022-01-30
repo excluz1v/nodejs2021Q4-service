@@ -8,7 +8,6 @@ import {
 import { v4 as uuidv4 } from 'uuid';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
-import { config } from 'src/config';
 
 /** The class to create a user instance */
 @Entity()
@@ -46,6 +45,7 @@ class User extends BaseEntity {
   }
 
   static async login(login: string, password: string) {
+    console.log(process.env.JWT_SECRET_KEY);
     const user = await getRepository(this).findOne({
       where: {
         login,
@@ -58,7 +58,7 @@ class User extends BaseEntity {
         userId: user.id,
         login: user.login,
       },
-      config.JWT_SECRET_KEY,
+      process.env.JWT_SECRET_KEY,
     );
     return { token };
   }
