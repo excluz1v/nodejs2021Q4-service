@@ -13,6 +13,8 @@ export class User {
     unique: true,
     type: 'text',
   })
+  login: string;
+
   @Column('text')
   password: string;
 }
