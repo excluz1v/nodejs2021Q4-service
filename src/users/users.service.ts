@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
 import { Repository } from 'typeorm';
 import { CreateuserDto } from './create-user.dto';
@@ -21,5 +21,14 @@ export class UsersService {
   async getAllusers() {
     const users = await this.userRepository.find();
     return users.map((user) => new UserEntity(user));
+  }
+
+  async getSingleUser(userId: string) {
+    const user = await this.userRepository.findOne(userId);
+
+    if (!user) {
+      throw new NotFoundException();
+    }
+    return new UserEntity(user);
   }
 }

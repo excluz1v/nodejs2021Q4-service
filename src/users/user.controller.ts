@@ -1,10 +1,17 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  Param,
+  ParseUUIDPipe,
+  Post,
+} from '@nestjs/common';
 import { CreateuserDto } from './create-user.dto';
 import { UsersService } from './users.service';
 
 @Controller('users')
 export class UsersController {
-  constructor(private userService: UsersService) {}
+  constructor(private userService: UsersService) { }
 
   @Post()
   create(@Body() userDto: CreateuserDto) {
@@ -13,5 +20,9 @@ export class UsersController {
   @Get()
   getAll() {
     return this.userService.getAllusers();
+  }
+  @Get(':userId')
+  getSingleUser(@Param('userId', ParseUUIDPipe) userId: string) {
+    return this.userService.getSingleUser(userId);
   }
 }
