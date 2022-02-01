@@ -5,6 +5,7 @@ import {
   Param,
   ParseUUIDPipe,
   Post,
+  Put,
 } from '@nestjs/common';
 import { CreateuserDto } from './create-user.dto';
 import { UsersService } from './users.service';
@@ -25,4 +26,9 @@ export class UsersController {
   getSingleUser(@Param('userId', ParseUUIDPipe) userId: string) {
     return this.userService.getSingleUser(userId);
   }
+  @Put('userId')
+  update(
+    @Param('userId', ParseUUIDPipe) userId: string,
+    @Body() updateUserDto: 
+  )
 }
