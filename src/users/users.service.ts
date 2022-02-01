@@ -45,4 +45,13 @@ export class UsersService {
 
     return new UserEntity(updatedUser);
   }
+
+  async del(userId: string) {
+    const user = await this.getSingleUser(userId);
+    if (user) {
+      await this.userRepository.delete({
+        id: userId,
+      });
+    }
+  }
 }
