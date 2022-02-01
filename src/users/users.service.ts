@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
 import { Repository } from 'typeorm';
-import { CreateuserDto } from './create-user.dto';
+import { CreateuserDto, UpdateuserDto } from './create-user.dto';
 import { User, UserEntity } from './user.entity';
 import bcrypt from 'bcrypt';
 
@@ -30,5 +30,19 @@ export class UsersService {
       throw new NotFoundException();
     }
     return new UserEntity(user);
+  }
+
+  async update(userId: string, updateuserDto: UpdateuserDto) {
+    const user = await this.getSingleUser(userId);
+    let { password } = updateuserDto;
+    const { name, login } = updateuserDto;
+
+    if (password) {
+      password = this.hashPassword(password);
+    }
+    let updatedUser = Object.assign(user, { password, name, login });
+    updatedUser = await this.userRepository.save(updatedUser);
+
+    return new UserEntity(updatedUser);
   }
 }
