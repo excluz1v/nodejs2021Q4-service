@@ -13,6 +13,8 @@ import {
 class Column {
   @IsString()
   title: string;
+  @IsString()
+  id: string;
 
   @IsInt()
   order: number;

@@ -1,31 +1,12 @@
-import { MigrationInterface, QueryRunner, Table } from 'typeorm';
+import { MigrationInterface, QueryRunner } from 'typeorm';
 
 export class BoardTable1643811902642 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.createTable(
-      new Table({
-        name: 'board',
-        columns: [
-          {
-            name: 'id',
-            type: 'uuid',
-            isPrimary: true,
-            isGenerated: true,
-            generationStrategy: 'uuid',
-          },
-          {
-            name: 'title',
-            type: 'text',
-          },
-          {
-            name: 'columns',
-            type: 'jsonb',
-            default: "'[]'",
-            isNullable: false,
-          },
-        ],
-      }),
-      true,
+    await queryRunner.query(
+      `CREATE TABLE "board" (
+      "id" character varying NOT NULL, 
+      "title" character varying(100) NOT NULL, 
+      CONSTRAINT "PK_865a0f2e22c140d261b1df80eb1" PRIMARY KEY ("id"))`,
     );
   }
 

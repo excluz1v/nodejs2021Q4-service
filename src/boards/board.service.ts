@@ -1,29 +1,40 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { BoardColumn } from 'src/columns/column.entity';
+import Columns from 'src/columns/column.entity';
 import { Repository } from 'typeorm';
-import { Board } from './board.entity';
+import Board from './board.entity';
 import { CreateBoardDto, UpdateBoardDto } from './create-board.dto';
 
 @Injectable()
 export class BoardsService {
   constructor(
     @InjectRepository(Board) private boardsRepository: Repository<Board>,
-    @InjectRepository(BoardColumn)
-    private readonly columnRepository: Repository<BoardColumn>,
+    @InjectRepository(Columns)
+    private readonly columnRepository: Repository<Columns>,
   ) { }
 
   async create(createBoardDto: CreateBoardDto) {
-    const newBoard = this.boardsRepository.create(createBoardDto);
-    const columns = newBoard.columns;
-    columns.map((column) => this.columnRepository.create(column));
-    newBoard.columns = [...columns];
-    return this.boardsRepository.save(newBoard);
+    try {
+      const { title, columns } = createBoardDto;
+      const newBoard = new Board(title);
+      const newColumns = columns.map(
+        (item) => new Columns(item.order, item.title, newBoard),
+      );
+      await Board.save(newBoard);
+      await Columns.save(newColumns);
+      const board = await Board.findOne(newBoard.id, {
+        relations: ['columns'],
+      });
+      return board;
+    } catch (err) {
+      throw new NotFoundException();
+    }
   }
   async findAll() {
-    return this.boardsRepository.find({
+    const result = await this.boardsRepository.find({
       relations: ['columns'],
     });
+    return result;
   }
 
   async findOne(id: string) {
@@ -31,7 +42,15 @@ export class BoardsService {
       relations: ['columns'],
     });
     if (!board) throw new NotFoundException();
-    return board;
+    const result =
+      board.columns === null
+        ? board
+        : {
+          ...board,
+          columns: board.columns?.map((item) => ({ ...item })),
+        };
+    console.log(result);
+    return result;
   }
 
   async update(id: string, updateBoardDto: UpdateBoardDto) {

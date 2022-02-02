@@ -1,30 +1,42 @@
-import { Board } from 'src/boards/board.entity';
+import { v4 as uuidv4 } from 'uuid';
 import {
-  Column,
   Entity,
-  Index,
-  JoinColumn,
+  Column,
   ManyToOne,
-  PrimaryGeneratedColumn,
+  BaseEntity,
+  PrimaryColumn,
+  JoinColumn,
 } from 'typeorm';
 
-@Entity()
-export class BoardColumn {
-  @Index()
-  @PrimaryGeneratedColumn('uuid')
+export interface IBoard {
   id: string;
-
-  @Column()
   title: string;
+}
+
+@Entity()
+class Columns extends BaseEntity {
+  @PrimaryColumn()
+  id: string;
 
   @Column()
   order: number;
 
-  @ManyToOne(() => Board, (board) => board.columns, {
-    onDelete: 'CASCADE',
-    orphanedRowAction: 'delete',
-    nullable: false,
+  @Column({
+    length: 100,
   })
-  @JoinColumn()
-  board: Board;
+  title: string;
+
+  @ManyToOne('Board', 'board', { onDelete: 'CASCADE' })
+  @JoinColumn({ name: 'board_id', referencedColumnName: 'id' })
+  board: IBoard;
+
+  constructor(order: number, title: string, board: IBoard) {
+    super();
+    this.id = uuidv4();
+    this.order = order;
+    this.title = title;
+    this.board = board;
+  }
 }
+
+export default Columns;
