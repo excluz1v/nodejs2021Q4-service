@@ -8,6 +8,7 @@ services:
       #   source: ./src/server.ts
       #   target: /docker/src/server.ts
       - ./src:/docker/src
+      - ./test:/docker/test
     ports:
       - ${PORT}:${PORT}
     depends_on:

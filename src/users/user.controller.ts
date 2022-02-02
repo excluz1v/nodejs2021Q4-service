@@ -3,6 +3,8 @@ import {
   Controller,
   Delete,
   Get,
+  HttpCode,
+  HttpStatus,
   Param,
   ParseUUIDPipe,
   Post,
@@ -16,30 +18,35 @@ export class UsersController {
   constructor(private userService: UsersService) { }
 
   @Post()
-  create(@Body() userDto: CreateuserDto) {
-    return this.userService.createUser(userDto);
+  @HttpCode(HttpStatus.CREATED)
+  async create(@Body() userDto: CreateuserDto) {
+    const result = await this.userService.createUser(userDto);
+    return result;
   }
 
   @Get()
-  getAll() {
-    return this.userService.getAllusers();
+  async getAll() {
+    const result = await this.userService.getAllusers();
+    return result;
   }
 
   @Get(':userId')
-  getSingleUser(@Param('userId', ParseUUIDPipe) userId: string) {
-    return this.userService.getSingleUser(userId);
+  async getSingleUser(@Param('userId', ParseUUIDPipe) userId: string) {
+    const result = await this.userService.getSingleUser(userId);
+    return result;
   }
 
-  @Put('userId')
-  update(
+  @Put(':userId')
+  async update(
     @Param('userId', ParseUUIDPipe) userId: string,
     @Body() updateUserDto: UpdateuserDto,
   ) {
-    return this.userService.update(userId, updateUserDto);
+    const result = await this.userService.update(userId, updateUserDto);
+    return result;
   }
 
   @Delete(':userId')
-  del(@Param('userId', ParseUUIDPipe) userId: string) {
+  async del(@Param('userId', ParseUUIDPipe) userId: string) {
     return this.userService.del(userId);
   }
 }
