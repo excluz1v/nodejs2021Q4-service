@@ -9,6 +9,7 @@ import Columns from './columns/column.entity';
 import { UserTable1643720396584 } from './db/migration/1643720396584-UserTable';
 import { BoardTable1643811902642 } from './db/migration/1643811902642-BoardTable';
 import { ColumnsTable1643817591809 } from './db/migration/1643817591809-ColumnsTable';
+import { TaskTable1643827236123 } from './db/migration/1643827236123-TaskTable';
 import { User } from './users/user.entity';
 import { UsersModule } from './users/users.module';
 
@@ -33,6 +34,7 @@ import { UsersModule } from './users/users.module';
         UserTable1643720396584,
         BoardTable1643811902642,
         ColumnsTable1643817591809,
+        TaskTable1643827236123,
       ],
       migrationsRun: true,
     }),

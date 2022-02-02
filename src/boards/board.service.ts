@@ -49,7 +49,6 @@ export class BoardsService {
           ...board,
           columns: board.columns?.map((item) => ({ ...item })),
         };
-    console.log(result);
     return result;
   }
 
