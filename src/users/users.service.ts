@@ -42,7 +42,6 @@ export class UsersService {
 
   async update(userId: string, updateUserDto: UpdateuserDto) {
     const user = await this.getSingleUser(userId);
-    console.log(user);
     if (user) {
       let { password } = updateUserDto;
       const { name, login } = updateUserDto;
