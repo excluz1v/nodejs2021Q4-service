@@ -8,7 +8,7 @@ export class TaskTable1643827236123 implements MigrationInterface {
             "title" character varying(100) NOT NULL,
             "order" integer NOT NULL, 
             "description" text NOT NULL,
-            "userId" character varying, 
+            "userId" uuid, 
             "boardId" character varying NOT NULL,
             "columnId" text, 
             CONSTRAINT "PK_fb213f79ee45060ba925ecd576e" PRIMARY KEY ("id"))`,
