@@ -8,6 +8,8 @@ import {
   Post,
   Put,
 } from '@nestjs/common';
+import { CreateTaskDto, UpdateTaskDto } from './task-dto';
+import { TasksService } from './task.service';
 
 @Controller('/boards/:boardId/tasks')
 export class TasksController {

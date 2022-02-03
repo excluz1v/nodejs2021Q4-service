@@ -42,14 +42,14 @@ export class BoardsService {
       relations: ['columns'],
     });
     if (!board) throw new NotFoundException();
-    const result =
-      board.columns === null
-        ? board
-        : {
-          ...board,
-          columns: board.columns?.map((item) => ({ ...item })),
-        };
-    return result;
+    // const result =
+    //   board.columns === null
+    //     ? board
+    //     : {
+    //       ...board,
+    //       columns: board.columns?.map((item) => ({ ...item })),
+    //     };
+    return board;
   }
 
   async update(id: string, updateBoardDto: UpdateBoardDto) {

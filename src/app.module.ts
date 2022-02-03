@@ -10,6 +10,8 @@ import { UserTable1643720396584 } from './db/migration/1643720396584-UserTable';
 import { BoardTable1643811902642 } from './db/migration/1643811902642-BoardTable';
 import { ColumnsTable1643817591809 } from './db/migration/1643817591809-ColumnsTable';
 import { TaskTable1643827236123 } from './db/migration/1643827236123-TaskTable';
+import Task from './tasks/task.entity';
+import { TasksModule } from './tasks/task.module';
 import { User } from './users/user.entity';
 import { UsersModule } from './users/users.module';
 
@@ -28,7 +30,7 @@ import { UsersModule } from './users/users.module';
       username: process.env.POSTGRES_USER,
       password: process.env.POSTGRES_PASSWORD,
       database: process.env.POSTGRES_DB,
-      entities: [User, Board, Columns],
+      entities: [User, Board, Columns, Task],
       synchronize: false,
       migrations: [
         UserTable1643720396584,
@@ -40,6 +42,7 @@ import { UsersModule } from './users/users.module';
     }),
     UsersModule,
     BoardModule,
+    TasksModule,
   ],
 })
 export class AppModule { }
