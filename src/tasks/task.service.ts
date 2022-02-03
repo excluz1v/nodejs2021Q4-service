@@ -13,7 +13,7 @@ export class TasksService {
     private taskRepository: Repository<Task>,
     private boardService: BoardsService,
     private userService: UsersService,
-  ) { }
+  ) {}
 
   async getAllByBoardId(boardId: string) {
     const tasks = await this.taskRepository.find({
@@ -55,18 +55,18 @@ export class TasksService {
     }
     const { title, order, description, columnId, userId } = taskCreateData;
     const user = await this.userService.getSingleUser(userId);
-    const newTask = new Task(title, order, description, columnId, board, user);
-    await this.taskRepository.save(newTask);
+    // const newTask = new Task(title, order, description, columnId, board, user);
+    // await this.taskRepository.save(newTask);
 
-    return {
-      id: newTask.id,
-      title: newTask.title,
-      order: newTask.order,
-      description: newTask.description,
-      userId: newTask.userId,
-      boardId: newTask.boardId,
-      columnId: newTask.columnId,
-    };
+    // return {
+    //   id: newTask.id,
+    //   title: newTask.title,
+    //   order: newTask.order,
+    //   description: newTask.description,
+    //   userId: newTask.userId,
+    //   boardId: newTask.boardId,
+    //   columnId: newTask.columnId,
+    // };
   }
 
   async update(

@@ -11,7 +11,7 @@ export class BoardsService {
     @InjectRepository(Board) private boardsRepository: Repository<Board>,
     @InjectRepository(Columns)
     private readonly columnRepository: Repository<Columns>,
-  ) { }
+  ) {}
 
   async create(createBoardDto: CreateBoardDto) {
     try {
@@ -42,26 +42,30 @@ export class BoardsService {
       relations: ['columns'],
     });
     if (!board) throw new NotFoundException();
-    // const result =
-    //   board.columns === null
-    //     ? board
-    //     : {
-    //       ...board,
-    //       columns: board.columns?.map((item) => ({ ...item })),
-    //     };
-    return board;
+    const result =
+      board.columns === null
+        ? board
+        : {
+            ...board,
+            columns: board.columns.map((item) => ({ ...item })),
+          };
+    return result;
   }
 
   async update(id: string, updateBoardDto: UpdateBoardDto) {
-    const board = await this.boardsRepository.findOne(id);
+    const board = await this.boardsRepository.findOne(id, {
+      relations: ['columns'],
+    });
     if (!board) {
       throw new NotFoundException();
     }
-    this.boardsRepository.merge(board, updateBoardDto);
-    await this.boardsRepository.save(board);
+    const updatedBoard = { ...board, ...updateBoardDto };
+    await this.boardsRepository.save(updatedBoard);
     return board;
   }
   async remove(id: string) {
-    return this.boardsRepository.delete(id);
+    const board = await this.boardsRepository.findOne(id);
+    if (!board) throw new NotFoundException();
+    return this.boardsRepository.remove(board);
   }
 }

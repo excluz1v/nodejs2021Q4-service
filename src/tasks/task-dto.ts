@@ -27,4 +27,4 @@ export class CreateTaskDto {
   columnId?: string | null;
 }
 
-export class UpdateTaskDto extends PartialType(CreateTaskDto) { }
+export class UpdateTaskDto extends PartialType(CreateTaskDto) {}

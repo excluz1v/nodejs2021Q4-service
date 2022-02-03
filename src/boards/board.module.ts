@@ -15,4 +15,4 @@ import { BoardsService } from './board.service';
   providers: [BoardsService],
   exports: [BoardsService],
 })
-export class BoardModule { }
+export class BoardModule {}

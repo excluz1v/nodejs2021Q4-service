@@ -1,5 +1,5 @@
 import Board from 'src/boards/board.entity';
-import { User } from 'src/users/user.entity';
+import User from 'src/users/user.entity';
 import {
   Entity,
   Column,

@@ -12,4 +12,4 @@ import { TasksController } from './tasks.contoller';
   imports: [TypeOrmModule.forFeature([Task]), BoardModule, UsersModule],
   exports: [TasksService],
 })
-export class TasksModule { }
+export class TasksModule {}

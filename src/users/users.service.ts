@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { Repository } from 'typeorm';
 import { CreateuserDto, UpdateuserDto } from './create-user.dto';
-import { User } from './user.entity';
+import User from './user.entity';
 import * as bcrypt from 'bcryptjs';
 import { InjectRepository } from '@nestjs/typeorm';
 
@@ -9,7 +9,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 export class UsersService {
   constructor(
     @InjectRepository(User) private userRepository: Repository<User>,
-  ) { }
+  ) {}
 
   hashPassword(pass: string) {
     return bcrypt.hashSync(pass, 10);
@@ -20,16 +20,16 @@ export class UsersService {
       where: { login: dto.login },
     });
     if (userExists) {
-      return User.toResponse(userExists);
+      return userExists;
     }
-    const user = this.userRepository.create(dto);
-    await this.userRepository.save(user);
-    return User.toResponse(user);
+    const { name, login, password } = dto;
+    const newUser = new User(name, login, password);
+    await this.userRepository.save(newUser);
+    return User.toResponse(newUser);
   }
   async getAllusers() {
     const users = await this.userRepository.find();
-    const result = users.map((user) => User.toResponse(user));
-    return result;
+    return users;
   }
 
   async getSingleUser(userId: string) {
@@ -37,23 +37,24 @@ export class UsersService {
     if (!user) {
       throw new NotFoundException(`User with id ${userId} not found`);
     }
-    return user;
+    return User.toResponse(user);
   }
 
   async update(userId: string, updateUserDto: UpdateuserDto) {
-    const user = await this.getSingleUser(userId);
-    if (user) {
-      let { password } = updateUserDto;
-      const { name, login } = updateUserDto;
+    const user = await this.userRepository.findOne(userId);
 
-      if (password) {
-        password = this.hashPassword(password);
-      }
-      let updatedUser = Object.assign(user, { password, name, login });
-      updatedUser = await this.userRepository.save(updatedUser);
-      return User.toResponse(updatedUser);
+    let { password } = updateUserDto;
+    const { name, login } = updateUserDto;
+
+    if (password) {
+      password = this.hashPassword(password);
     }
-    throw new NotFoundException();
+    user.name = name || user.name;
+    user.login = login || user.login;
+    user.password = password || user.password;
+
+    await this.userRepository.save(user);
+    return User.toResponse(user);
   }
 
   async del(userId: string) {

@@ -12,7 +12,7 @@ import { CreateBoardDto, UpdateBoardDto } from './create-board.dto';
 
 @Controller('boards')
 export class BoardController {
-  constructor(private readonly boardService: BoardsService) { }
+  constructor(private readonly boardService: BoardsService) {}
 
   @Get()
   findAll() {

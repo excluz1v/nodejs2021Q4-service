@@ -13,7 +13,7 @@ import { TasksService } from './task.service';
 
 @Controller('/boards/:boardId/tasks')
 export class TasksController {
-  constructor(private readonly tasksService: TasksService) { }
+  constructor(private readonly tasksService: TasksService) {}
 
   @Get()
   getAllByBoardId(@Param('boardId', ParseUUIDPipe) boardId: string) {
