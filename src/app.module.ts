@@ -3,6 +3,7 @@ import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { AuthModule } from './auth/auth.module';
 import Board from './boards/board.entity';
 import { BoardModule } from './boards/board.module';
 import Columns from './columns/column.entity';
@@ -35,6 +36,7 @@ import { UsersModule } from './users/users.module';
     UsersModule,
     BoardModule,
     TasksModule,
+    AuthModule,
   ],
 })
-export class AppModule {}
+export class AppModule { }

@@ -103,8 +103,6 @@ describe('Tasks suite', () => {
         .then((res) => {
           expect(res.body.id).to.be.a('string');
           taskId = res.body.id;
-          console.log(res.body);
-          console.log(TEST_TASK_DATA);
           jestExpect(res.body).toMatchObject({
             ...TEST_TASK_DATA,
             boardId: testBoardId,

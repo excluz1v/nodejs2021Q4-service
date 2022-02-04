@@ -70,7 +70,6 @@ export class TasksService {
         boardId,
       },
     });
-    console.log(task);
     if (!task) {
       throw new NotFoundException();
     }

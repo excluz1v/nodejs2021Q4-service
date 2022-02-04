@@ -9,7 +9,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 export class UsersService {
   constructor(
     @InjectRepository(User) private userRepository: Repository<User>,
-  ) {}
+  ) { }
 
   hashPassword(pass: string) {
     return bcrypt.hashSync(pass, 10);
@@ -22,7 +22,9 @@ export class UsersService {
     if (userExists) {
       return userExists;
     }
-    const { name, login, password } = dto;
+    const { name, login } = dto;
+    let { password } = dto;
+    password = this.hashPassword(password);
     const newUser = new User(name, login, password);
     await this.userRepository.save(newUser);
     return User.toResponse(newUser);

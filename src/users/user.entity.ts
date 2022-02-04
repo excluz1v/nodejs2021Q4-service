@@ -6,8 +6,8 @@ import {
   getRepository,
 } from 'typeorm';
 import { v4 as uuidv4 } from 'uuid';
-import bcrypt from 'bcryptjs';
-import jwt from 'jsonwebtoken';
+import * as bcrypt from 'bcryptjs';
+import * as jwt from 'jsonwebtoken';
 
 /** The class to create a user instance */
 @Entity()
