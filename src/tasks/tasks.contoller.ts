@@ -8,12 +8,12 @@ import {
   Post,
   Put,
 } from '@nestjs/common';
-import { CreateTaskDto, UpdateTaskDto } from './task-dto';
+import { CreateTaskDto } from './task-dto';
 import { TasksService } from './task.service';
 
 @Controller('/boards/:boardId/tasks')
 export class TasksController {
-  constructor(private readonly tasksService: TasksService) {}
+  constructor(private readonly tasksService: TasksService) { }
 
   @Get()
   getAllByBoardId(@Param('boardId', ParseUUIDPipe) boardId: string) {
@@ -40,7 +40,7 @@ export class TasksController {
   update(
     @Param('boardId', ParseUUIDPipe) boardId: string,
     @Param('taskId', ParseUUIDPipe) taskId: string,
-    @Body() updateTaskDto: UpdateTaskDto,
+    @Body() updateTaskDto: CreateTaskDto,
   ) {
     return this.tasksService.update({ boardId, taskId }, updateTaskDto);
   }

@@ -69,6 +69,17 @@ class Task extends BaseEntity {
     this.columnId = columnId;
     this.board = board;
   }
+  static toResponse(task: Task) {
+    return {
+      id: task.id,
+      title: task.title,
+      order: task.order,
+      description: task.description,
+      userId: task.userId,
+      columnId: task.columnId,
+      boardId: task.boardId,
+    };
+  }
 }
 
 export default Task;

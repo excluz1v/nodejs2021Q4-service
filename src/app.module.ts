@@ -27,14 +27,14 @@ import { UsersModule } from './users/users.module';
       username: process.env.POSTGRES_USER,
       password: process.env.POSTGRES_PASSWORD,
       database: process.env.POSTGRES_DB,
-      entities: [User, Board, Columns],
+      entities: [User, Board, Columns, Task],
       synchronize: false,
       migrations: [PostRefactoring1642325483900],
       migrationsRun: true,
     }),
     UsersModule,
     BoardModule,
-    // TasksModule,
+    TasksModule,
   ],
 })
 export class AppModule {}

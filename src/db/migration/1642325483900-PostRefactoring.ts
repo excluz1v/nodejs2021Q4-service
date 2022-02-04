@@ -45,10 +45,10 @@ export class PostRefactoring1642325483900 implements MigrationInterface {
       CONSTRAINT "PK_cace4a159ff9f2512dd42373760" PRIMARY KEY ("id"))`,
     );
     // creating admin
-    const adminPasswordWithHash: string = bcrypt.hashSync('admin', 10);
-    await queryRunner.query(
-      `INSERT INTO "user" (name, login, password, id) VALUES ('admin', 'admin', '${adminPasswordWithHash}', '1');`,
-    );
+    // const adminPasswordWithHash: string = bcrypt.hashSync('admin', 10);
+    // await queryRunner.query(
+    //   `INSERT INTO "user" (name, login, password, id) VALUES ('admin', 'admin', '${adminPasswordWithHash}', '1');`,
+    // );
     await queryRunner.query(
       `CREATE TABLE "task" (
       "id" character varying NOT NULL,

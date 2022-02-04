@@ -1,9 +1,9 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { BoardsService } from 'src/boards/board.service';
-import { UsersService } from 'src/users/users.service';
+import Board from 'src/boards/board.entity';
+import User from 'src/users/user.entity';
 import { Repository } from 'typeorm';
-import { CreateTaskDto, UpdateTaskDto } from './task-dto';
+import { CreateTaskDto } from './task-dto';
 import Task from './task.entity';
 
 @Injectable()
@@ -11,16 +11,19 @@ export class TasksService {
   constructor(
     @InjectRepository(Task)
     private taskRepository: Repository<Task>,
-    private boardService: BoardsService,
-    private userService: UsersService,
-  ) {}
+    @InjectRepository(Board)
+    private boardRepository: Repository<Board>,
+    @InjectRepository(User)
+    private userRepository: Repository<User>,
+  ) { }
 
   async getAllByBoardId(boardId: string) {
     const tasks = await this.taskRepository.find({
       relations: ['user', 'board'],
       where: { boardId },
     });
-    return tasks;
+
+    return tasks.map((task) => Task.toResponse(task));
   }
 
   async getOne({ taskId, boardId }: { taskId: string; boardId: string }) {
@@ -29,68 +32,60 @@ export class TasksService {
         id: taskId,
         boardId,
       },
-      relations: ['user', 'board'],
     });
-
     if (!task) {
       throw new NotFoundException();
     }
-    return {
-      id: task.id,
-      title: task.title,
-      order: task.order,
-      description: task.description,
-      userId: task.userId,
-      user: task.user,
-      board: task.board,
-      boardId: task.boardId,
-      columnId: task.columnId,
-    };
+    return Task.toResponse(task);
   }
 
   async create(boardId: string, taskCreateData: CreateTaskDto) {
-    const board = await this.boardService.findOne(boardId);
-    if (!board) {
-      throw new NotFoundException();
-    }
-    const { title, order, description, columnId, userId } = taskCreateData;
-    const user = await this.userService.getSingleUser(userId);
-    // const newTask = new Task(title, order, description, columnId, board, user);
-    // await this.taskRepository.save(newTask);
-
-    // return {
-    //   id: newTask.id,
-    //   title: newTask.title,
-    //   order: newTask.order,
-    //   description: newTask.description,
-    //   userId: newTask.userId,
-    //   boardId: newTask.boardId,
-    //   columnId: newTask.columnId,
-    // };
+    const board = await this.boardRepository.findOne(boardId);
+    if (board) {
+      const { title, order, description, columnId, userId } = taskCreateData;
+      const user =
+        userId === null ? null : await this.userRepository.findOne(userId);
+      const newTask = new Task(
+        title,
+        order,
+        description,
+        columnId,
+        board,
+        user,
+        boardId,
+        userId,
+      );
+      await this.taskRepository.save(newTask);
+      return Task.toResponse(newTask);
+    } else throw new NotFoundException();
   }
 
   async update(
     { boardId, taskId }: { boardId: string; taskId: string },
-    updatedTask: UpdateTaskDto,
+    updatedData: CreateTaskDto,
   ) {
-    let task = await this.taskRepository.findOne({ id: taskId, boardId });
-
+    const task = await this.taskRepository.findOne({
+      where: {
+        id: taskId,
+        boardId,
+      },
+    });
+    console.log(task);
     if (!task) {
       throw new NotFoundException();
     }
+    const { userId, title, order, columnId, description } = updatedData;
 
-    Object.assign(task, updatedTask);
+    const user =
+      userId !== null ? await this.userRepository.findOne(userId) : null;
 
-    task = await this.taskRepository.save(task);
-
-    return {
-      title: task.title,
-      order: task.order,
-      description: task.description,
-      userId: task.userId,
-      boardId,
-      columnId: task.columnId,
-    };
+    task.title = title || task.title;
+    task.order = order || task.order;
+    task.description = description || task.description;
+    task.user = user;
+    task.columnId = columnId || task.columnId;
+    await this.taskRepository.save(task);
+    return Task.toResponse(task);
   }
 
   async del({
@@ -101,15 +96,7 @@ export class TasksService {
     taskId: string;
   }): Promise<void> {
     const task = await this.taskRepository.findOne(taskId);
+    if (!task) throw new NotFoundException();
     await this.taskRepository.remove(task);
-  }
-
-  async unassignUser(userId: string): Promise<void> {
-    await this.taskRepository.update(
-      {
-        userId,
-      },
-      { userId: null },
-    );
   }
 }

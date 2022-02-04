@@ -58,9 +58,9 @@ export class UsersService {
   }
 
   async del(userId: string) {
-    const user = await this.getSingleUser(userId);
+    const user = await this.userRepository.findOne(userId);
     if (user) {
-      await this.userRepository.delete(userId);
+      await this.userRepository.remove(user);
     } else throw new NotFoundException();
   }
 }
