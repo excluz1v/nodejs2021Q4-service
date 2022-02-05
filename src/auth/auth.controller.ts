@@ -4,7 +4,7 @@ import { LoginUserDto } from './autu-user.dto';
 
 @Controller('/login')
 export class AuthController {
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService) {}
   @Post()
   login(@Body() userDto: LoginUserDto) {
     return this.authService.login(userDto);

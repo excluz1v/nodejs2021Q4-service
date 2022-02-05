@@ -15,7 +15,7 @@ export class TasksService {
     private boardRepository: Repository<Board>,
     @InjectRepository(User)
     private userRepository: Repository<User>,
-  ) { }
+  ) {}
 
   async getAllByBoardId(boardId: string) {
     const tasks = await this.taskRepository.find({

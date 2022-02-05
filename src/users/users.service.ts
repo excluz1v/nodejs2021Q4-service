@@ -9,7 +9,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 export class UsersService {
   constructor(
     @InjectRepository(User) private userRepository: Repository<User>,
-  ) { }
+  ) {}
 
   hashPassword(pass: string) {
     return bcrypt.hashSync(pass, 10);
