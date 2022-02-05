@@ -1,31 +1,23 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
-import * as fs from 'fs/promises';
+import * as fs from 'fs';
 import * as path from 'path';
 
 @Injectable()
 export class FilesService {
   async createFile(file) {
     try {
-      const filePath = path.resolve(
-        __dirname,
-        '..',
-        'static',
-        file.originalname,
-      );
-      const isExisst = fs
-        .stat(filePath)
-        .then((r) => true)
-        .catch((err) => false);
-      if (!isExisst) {
-        await fs.appendFile(filePath, file);
+      const filePath = path.resolve(__dirname, '..', 'static');
+      if (!fs.existsSync(filePath)) {
+        fs.mkdirSync(filePath, { recursive: true });
       }
-      console.log(path.resolve(__dirname, '..', 'static', file.originalname));
-      return path.basename(filePath);
+      fs.writeFileSync(path.join(filePath, file.originalname), file.buffer);
+      return file.originalname;
     } catch (error) {
-      throw new HttpException(
-        'ошибка при записи файла',
-        HttpStatus.INTERNAL_SERVER_ERROR,
-      );
+      console.log(error);
+      // throw new HttpException(
+      //   'ошибка при записи файла',
+      //   HttpStatus.INTERNAL_SERVER_ERROR,
+      // );
     }
   }
 }
