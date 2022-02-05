@@ -12,6 +12,7 @@ import Task from './tasks/task.entity';
 import { TasksModule } from './tasks/task.module';
 import User from './users/user.entity';
 import { UsersModule } from './users/users.module';
+import { FilesModule } from './files/files.module';
 
 @Module({
   controllers: [AppController],
@@ -37,6 +38,7 @@ import { UsersModule } from './users/users.module';
     BoardModule,
     TasksModule,
     AuthModule,
+    FilesModule,
   ],
 })
 export class AppModule { }
