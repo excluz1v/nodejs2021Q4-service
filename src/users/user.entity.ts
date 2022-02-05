@@ -1,0 +1,72 @@
+import {
+  Entity,
+  Column,
+  BaseEntity,
+  PrimaryColumn,
+  getRepository,
+} from 'typeorm';
+import { v4 as uuidv4 } from 'uuid';
+import * as bcrypt from 'bcryptjs';
+import * as jwt from 'jsonwebtoken';
+
+/** The class to create a user instance */
+@Entity()
+class User extends BaseEntity {
+  @PrimaryColumn()
+  id: string;
+
+  @Column({
+    length: 50,
+  })
+  name: string;
+
+  @Column({
+    length: 50,
+  })
+  login: string;
+
+  @Column('character varying')
+  password: string;
+
+  /**
+   * to create a user, the constructor takes:
+   * @param name - user name
+   * @param login - user's login
+   * @param password - user password
+   * @returns user object
+   */
+
+  constructor(name: string, login: string, password: string) {
+    super();
+    this.id = uuidv4();
+    this.name = name;
+    this.login = login;
+    this.password = password;
+  }
+
+  static async login(login: string, password: string) {
+    const user = await getRepository(this).findOne({
+      where: {
+        login,
+      },
+    });
+    if (!user) return false;
+    if (!bcrypt.compareSync(password, user.password)) return false;
+    const token = jwt.sign(
+      {
+        userId: user.id,
+        login: user.login,
+      },
+      'secret-key',
+    );
+    return { token };
+  }
+  static toResponse(user: User) {
+    return {
+      id: user.id,
+      login: user.login,
+      name: user.name,
+    };
+  }
+}
+export default User;
